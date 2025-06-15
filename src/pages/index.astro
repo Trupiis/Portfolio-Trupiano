@@ -1,11 +1,44 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Badge from '../components/Badge.astro';
 import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Education from '../components/Education.astro';
+import Proyecto from "../components/Proyectos.astro"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+//icons
+import Book from '../icons/Book.astro';
+import Case from '../icons/Case.astro';
 ---
 
 <Layout>
-	<Welcome />
+    <main>
+        <Section class="py-30" >
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQH2Tgzhsjau7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718252487228?e=2147483647&v=beta&t=hTivE50bqrwQTghXaOuksLqjyPBTN1_30D7GGexw8Tk" alt="Foto de Elian" class="h-22 w-22 rounded-full mb-5">
+
+                <h1 class="flex text-6xl font-bold gap-10 pb-5">Elian Trupiano 
+                    <div class="flex items-center">
+                        <a class="flex items-center transition-transform duration-300 hover:scale-110" target="_blank" href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/"><Badge>Disponible para trabajar</Badge></a> 
+                    </div>
+                </h1>     
+                <p class="text-lg">+2 años de experiencia como <span class="text-[#51D8F3]">Desarrollador Front-end</span> y +4 años como <span class="text-[#51D8F3]">Diseñador gráfico</span>, hoy puedo combinar mis habilidades para ofrecerte la solución a tu problema</p>       
+        </Section>
+
+        <Section id="educacion">
+            <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
+                <Book></Book>
+                Educación
+            </h2>
+
+            <Education></Education>
+        </Section>
+
+        <Section id="proyectos">
+            <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
+                <Case></Case>
+                Proyectos
+            </h2>
+            
+            <Proyecto></Proyecto>
+        </Section>
+    </main>
 </Layout>

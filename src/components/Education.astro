@@ -1,0 +1,40 @@
+---
+import EducationItem from "./EducationItem.astro"
+const EDUCATION = [
+    {
+        date: "2023",
+        title: "Tecnologias aprendidas",
+        description: "Es terrible cheee"
+
+    },
+    {
+        date: "2024",
+        title: "Tecnologias aprendidas",
+        description: "Es terrible cheee"
+
+    },
+    {
+        date: "2024",
+        title: "Tecnologias aprendidas",
+        description: "Es terrible cheee"
+
+    },
+    {
+        date: "2025",
+        title: "Tecnologias aprendidas",
+        description: "Es terrible cheee"
+
+    }
+]
+---
+
+
+    <ol class="items-center sm:flex">
+        {
+            EDUCATION.map(education => (
+                <li>
+                    <EducationItem {...education}/>
+                </li>
+            ))
+        }
+    </ol>
