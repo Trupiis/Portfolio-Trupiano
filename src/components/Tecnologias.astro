@@ -7,8 +7,11 @@ import NEXT from "../icons/NEXT.astro"
 import REACT from "../icons/REACT.astro"
 import TAILWIND from "../icons/TAILWIND.astro"
 import NODE from "../icons/NODE.astro"
+import AstroIcon from "../icons/AstroIcon.astro"
+import Mongo from "../icons/Mongo.astro"
 import PS from "../icons/PS.astro"
 import AI from "../icons/AI.astro"
+import Figma from "../icons/Figma.astro"
 
 
 const TECNOLOGIAS = [
@@ -25,12 +28,16 @@ const TECNOLOGIAS = [
         icon: JS
     },
     {
+        title: "React",
+        icon: REACT
+    },
+    {
         title: "NextJS",
         icon: NEXT
     },
     {
-        title: "React",
-        icon: REACT
+        title: "Astro",
+        icon: AstroIcon
     },
     {
         title: "TailwindCSS",
@@ -41,6 +48,10 @@ const TECNOLOGIAS = [
         icon: NODE
     },
     {
+        title: "MongoDB",
+        icon: Mongo
+    },
+    {
         title: "Photoshop",
         icon: PS
     },
@@ -48,13 +59,18 @@ const TECNOLOGIAS = [
         title: "Illustrator",
         icon: AI
     },
+    {
+        title: "Figma",
+        icon: Figma
+    },
+    
 ]
 
 ---
 
-<div class="grid grid-cols-4 grid-rows-2 gap-4">
+<div class="grid place-items-center grid-cols-4 grid-rows-2 gap-8 ">
     {TECNOLOGIAS.map(({ title, icon: Icon}) => (
-        <div class="inline-flex flex-col items-center w-30 p-2.5 bg-gray-800 rounded">
+        <div class="inline-flex flex-col items-center w-30 p-2.5 bg-gray-900 rounded duration-100 hover:scale-110">
             <Icon class="size-12 p-2"/>
             <span>{title}</span>
         </div>
