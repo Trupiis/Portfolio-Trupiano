@@ -4,26 +4,26 @@ import Badge from "./Badge.astro"
 
 const PROYECTOS = [
     {
-        title: "Titulo del proyecto",
-        description: "Es terrible cheee",
-        tags: ["HTML", "CSS", "JS"],
-        image: "../public/proyectos/proyecto-1.png"
+        title: "Portafolio | Elian Trupiano",
+        description: "Proyecto desarrollado con Astro y Tailwind CSS, enfocado en lograr un sitio web moderno, rápido y optimizado.",
+        tags: ["Astro", "TailwindCSS", "Javascript"],
+        image: "../public/proyectos/p01.webp"
 
     },
     {
-        title: "Titulo del proyecto",
-        description: "Es terrible cheee",
-        tags: ["HTML", "CSS", "JS"],
-        image: "../public/proyectos/proyecto-1.png"
+        title: "Ecommerce GoPro Shop",
+        description: "Ecommerce desarrollado con NextJS incluyendo Firestore como base de datos para darle la funcionalidad a la tienda.",
+        tags: ["NextJS", "TailwindCSS"],
+        image: "../public/proyectos/p02.webp"
 
     },
     {
-        title: "Titulo del proyecto",
-        description: "Es terrible cheee",
-        tags: ["HTML", "CSS", "JS"],
-        image: "../public/proyectos/proyecto-1.png"
+        title: "Portafolio | Elian Trupiano",
+        description: "Proyecto desarrollado con Astro y Tailwind CSS, enfocado en lograr un sitio web moderno, rápido y optimizado.",
+        tags: ["Astro", "TailwindCSS", "Javascript"],
+        image: "../public/proyectos/p01.webp"
 
-    }
+    },
 ]
 ---
 
@@ -35,15 +35,15 @@ const PROYECTOS = [
         </span>
         <h3 class="flex items-center mb-1 text-lg font-semibold text-white opacity-90">{title}</h3>
 
-        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{description}</p>
+        <p class="mb-2 text-base font-normal text-gray-500 text-pretty w-auto">{description}</p>
 
-        <ul>
+        <ul class="mb-4">
             {tags.map((tag)=>(
                 <Badge class="cursor-default inline-block text-xs duration-100 ease-linear hover:scale-110">{tag}</Badge>
             ))}
         </ul>
 
-        <img src="" alt=""/>
+        <img class="rounded-lg w-xl shadow-2xl shadow-white/20" src={image} alt={`Foto del proyecto ${title}`}/>
         </li>
     </ol>
 

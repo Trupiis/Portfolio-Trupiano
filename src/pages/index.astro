@@ -4,15 +4,21 @@ import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
 import Education from '../components/Education.astro';
 import Proyecto from "../components/Proyectos.astro"
+import ButtonInfo from '../components/ButtonInfo.astro';
 
 //icons
 import Book from '../icons/Book.astro';
 import Case from '../icons/Case.astro';
+import GitHub from '../icons/GitHub.astro';
+import LinkedIn from '../icons/LinkedIn.astro';
+import Mail from '../icons/Mail.astro';
+
+
 ---
 
 <Layout>
     <main>
-        <Section class="py-30" >
+        <Section class="py-15" >
             <img src="https://media.licdn.com/dms/image/v2/D4D03AQH2Tgzhsjau7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718252487228?e=2147483647&v=beta&t=hTivE50bqrwQTghXaOuksLqjyPBTN1_30D7GGexw8Tk" alt="Foto de Elian" class="h-22 w-22 rounded-full mb-5">
 
                 <h1 class="flex text-6xl font-bold gap-10 pb-5">Elian Trupiano 
@@ -20,12 +26,38 @@ import Case from '../icons/Case.astro';
                         <a class="flex items-center transition-transform duration-300 hover:scale-110" target="_blank" href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/"><Badge>Disponible para trabajar</Badge></a> 
                     </div>
                 </h1>     
-                <p class="text-lg">+2 años de experiencia como <span class="text-[#51D8F3]">Desarrollador Front-end</span> y +4 años como <span class="text-[#51D8F3]">Diseñador gráfico</span>, hoy puedo combinar mis habilidades para ofrecerte la solución a tu problema</p>       
-        </Section>
+                <p class="text-lg pb-5">+2 años de experiencia como <span class="text-[#51D8F3]">Desarrollador Front-end</span> y +4 años como <span class="text-[#51D8F3]">Diseñador gráfico</span>, hoy puedo combinar mis habilidades para ofrecerte la solución a tu problema</p>       
+        
+                <ul class="flex gap-x-5">
 
-        <Section id="educacion">
+                    <li>
+                        <a href="https://github.com/Trupiis" target="_blank" class="flex gap-x-2.5 bg-gray-900 p-2 rounded-lg w-auto">
+                        <GitHub />
+                        <span>GitHub</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/" target="_blank" class="flex gap-x-2.5 bg-gray-900 p-2 rounded-lg w-auto">
+                        <LinkedIn/>
+                        <span>LinkedIn</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:eliantrupianodg@gmail.com"  class="flex gap-x-2.5 bg-gray-900 p-2 rounded-lg w-auto">
+                        <Mail/>
+                        <span>Eliantrupianodg@gmail.com</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </Section>
+
+        <Section id="educacion" class="py-15" >
             <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
-                <Book></Book>
+                <Book class="size-9"></Book>
                 Educación
             </h2>
 
@@ -34,7 +66,7 @@ import Case from '../icons/Case.astro';
 
         <Section id="proyectos">
             <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
-                <Case></Case>
+                <Case class="size-9"></Case>
                 Proyectos
             </h2>
             
