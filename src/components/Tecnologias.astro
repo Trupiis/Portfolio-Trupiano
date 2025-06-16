@@ -1,0 +1,62 @@
+---
+
+import HTML from "../icons/HTML.astro"
+import CSS from "../icons/CSS.astro"
+import JS from "../icons/JS.astro"
+import NEXT from "../icons/NEXT.astro"
+import REACT from "../icons/REACT.astro"
+import TAILWIND from "../icons/TAILWIND.astro"
+import NODE from "../icons/NODE.astro"
+import PS from "../icons/PS.astro"
+import AI from "../icons/AI.astro"
+
+
+const TECNOLOGIAS = [
+    {
+        title: "HTML",
+        icon: HTML
+    },
+    {
+        title: "CSS",
+        icon: CSS
+    },
+    {
+        title: "JavaScript",
+        icon: JS
+    },
+    {
+        title: "NextJS",
+        icon: NEXT
+    },
+    {
+        title: "React",
+        icon: REACT
+    },
+    {
+        title: "TailwindCSS",
+        icon: TAILWIND
+    },
+    {
+        title: "NodeJS",
+        icon: NODE
+    },
+    {
+        title: "Photoshop",
+        icon: PS
+    },
+    {
+        title: "Illustrator",
+        icon: AI
+    },
+]
+
+---
+
+<div class="grid grid-cols-4 grid-rows-2 gap-4">
+    {TECNOLOGIAS.map(({ title, icon: Icon}) => (
+        <div class="inline-flex flex-col items-center w-30 p-2.5 bg-gray-800 rounded">
+            <Icon class="size-12 p-2"/>
+            <span>{title}</span>
+        </div>
+    ))}
+</div>

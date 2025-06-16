@@ -5,6 +5,8 @@ import Section from '../components/Section.astro';
 import Education from '../components/Education.astro';
 import Proyecto from "../components/Proyectos.astro"
 import ButtonInfo from '../components/ButtonInfo.astro';
+import Tecnologias from '../components/Tecnologias.astro';
+import Tools from '../icons/Tools.astro';
 
 //icons
 import Book from '../icons/Book.astro';
@@ -18,7 +20,7 @@ import Mail from '../icons/Mail.astro';
 
 <Layout>
     <main>
-        <Section class="py-15" >
+        <Section class="py-10" >
             <img src="https://media.licdn.com/dms/image/v2/D4D03AQH2Tgzhsjau7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718252487228?e=2147483647&v=beta&t=hTivE50bqrwQTghXaOuksLqjyPBTN1_30D7GGexw8Tk" alt="Foto de Elian" class="h-22 w-22 rounded-full mb-5">
 
                 <h1 class="flex text-6xl font-bold gap-10 pb-5">Elian Trupiano 
@@ -52,10 +54,19 @@ import Mail from '../icons/Mail.astro';
                     </li>
 
                 </ul>
-
             </Section>
 
-        <Section id="educacion" class="py-15" >
+            <Section id="tecnologias">
+                <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
+                <Tools class="size-9"></Tools>
+                Tecnologias
+            </h2>
+                <Tecnologias></Tecnologias>
+            </Section>
+
+
+
+        <Section id="educacion" class="pt-15" >
             <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
                 <Book class="size-9"></Book>
                 Educación
