@@ -14,49 +14,62 @@ import Case from '../icons/Case.astro';
 import GitHub from '../icons/GitHub.astro';
 import LinkedIn from '../icons/LinkedIn.astro';
 import Mail from '../icons/Mail.astro';
+import Behance from '../icons/Behance.astro';
 
 
 ---
 
 <Layout>
-    <main>
-        <Section class="py-10" >
+    <main class="p-6">
+        <Section class="py-10 max-w-[700px] w-full mx-auto px-4">
             <img src="https://media.licdn.com/dms/image/v2/D4D03AQH2Tgzhsjau7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718252487228?e=2147483647&v=beta&t=hTivE50bqrwQTghXaOuksLqjyPBTN1_30D7GGexw8Tk" alt="Foto de Elian" class="h-22 w-22 rounded-full mb-5">
 
-                <h1 class="flex text-6xl font-bold gap-10 pb-5">Elian Trupiano 
+                <h1 class="max-lg:flex-col flex text-5xl font-bold gap-x-10 gap-y-4 pb-4">
+                    Elian Trupiano 
                     <div class="flex items-center">
-                        <a class="flex items-center transition-transform duration-300 hover:scale-110" target="_blank" href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/"><Badge>Disponible para trabajar</Badge></a> 
+                        <a class="flex items-cente transition-transform duration-300 lg:hover:scale-110" target="_blank" href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/"><Badge>Disponible para trabajar</Badge></a> 
                     </div>
                 </h1>     
                 <p class="text-lg pb-5">+2 años de experiencia como <span class="text-[#51D8F3]">Desarrollador Front-end</span> y +4 años como <span class="text-[#51D8F3]">Diseñador gráfico</span>, hoy puedo combinar mis habilidades para ofrecerte la solución a tu problema</p>       
         
                 <ul class="flex gap-x-5">
+                    <div class="gap-5 max-lg:flex-col flex">
+                        <li>
+                            <a href="https://github.com/Trupiis" target="_blank" class="flex gap-x-2.5 bg-gray-900 p-2.5 rounded-lg">
+                            <GitHub />
+                            <span>GitHub</span>
+                            </a>
+                        </li>
 
+                        <li>
+                            <a href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/" target="_blank" class="flex gap-x-2.5 bg-gray-900 p-2.5 rounded-lg">
+                            <LinkedIn/>
+                            <span>LinkedIn</span>
+                            </a>
+                        </li>
+                    </div>
+
+                <div class="gap-5 max-lg:flex-col flex">
+                    
                     <li>
-                        <a href="https://github.com/Trupiis" target="_blank" class="flex gap-x-2.5 bg-gray-900 p-2 rounded-lg w-auto">
-                        <GitHub />
-                        <span>GitHub</span>
+                        <a href="https://www.behance.net/elitrupi" target="_blank" class="inline-flex gap-x-2.5 bg-gray-900 p-2.5 rounded-lg">
+                            <Behance/>
+                            <span>Behance</span>
                         </a>
                     </li>
-
+                    
                     <li>
-                        <a href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/" target="_blank" class="flex gap-x-2.5 bg-gray-900 p-2 rounded-lg w-auto">
-                        <LinkedIn/>
-                        <span>LinkedIn</span>
+                        <a href="mailto:eliantrupianodg@gmail.com"  class="flex gap-x-2.5 bg-gray-900 p-2.5 rounded-lg">
+                            <Mail/>
+                            <span>Eliantrupianodg@gmail.com</span>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="mailto:eliantrupianodg@gmail.com"  class="flex gap-x-2.5 bg-gray-900 p-2 rounded-lg w-auto">
-                        <Mail/>
-                        <span>Eliantrupianodg@gmail.com</span>
-                        </a>
-                    </li>
+                </div>
 
                 </ul>
             </Section>
 
-            <Section id="tecnologias">
+            <Section id="tecnologias" class="py-20 max-w-[700px] mx-auto">
                 <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
                 <Tools class="size-9"></Tools>
                 Tecnologias
@@ -66,16 +79,16 @@ import Mail from '../icons/Mail.astro';
 
 
 
-        <Section id="educacion" class="pt-15" >
+        <!-- <Section id="educacion" class="py-20" >
             <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
                 <Book class="size-9"></Book>
                 Educación
             </h2>
 
             <Education></Education>
-        </Section>
+        </Section> -->
 
-        <Section id="proyectos">
+        <Section id="proyectos" class="py-20 max-w-[700px] mx-auto">
             <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
                 <Case class="size-9"></Case>
                 Proyectos
