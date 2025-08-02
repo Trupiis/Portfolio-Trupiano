@@ -22,8 +22,11 @@ import Behance from '../icons/Behance.astro';
 
 <Layout>
     <main class="p-6">
-        <Section class="py-10 max-w-[700px] w-full mx-auto px-4">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQH2Tgzhsjau7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718252487228?e=2147483647&v=beta&t=hTivE50bqrwQTghXaOuksLqjyPBTN1_30D7GGexw8Tk" alt="Foto de Elian" class="h-22 w-22 rounded-full mb-5">
+        <Section class="pb-30 pt-20 max-w-[700px] w-full mx-auto px-4">
+            <div class="flex items-center">
+                <img src="/Trupiano-foto.png" alt="" class="h-30 w-30 object-cover rounded-full mb-10">
+            </div>
+
 
                 <h1 class="max-lg:flex-col flex text-5xl font-bold gap-x-10 gap-y-4 pb-4">
                     Elian Trupiano 
@@ -70,8 +73,8 @@ import Behance from '../icons/Behance.astro';
                 </ul>
             </Section>
 
-            <Section id="tecnologias" class="py-20 max-w-[700px] mx-auto">
-                <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
+            <Section id="tecnologias" class="py-20 mx-auto">
+            <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10 justify-center text-center">
                 <Tools class="size-9"></Tools>
                 Tecnologias
             </h2>
@@ -89,12 +92,11 @@ import Behance from '../icons/Behance.astro';
             <Education></Education>
         </Section> -->
 
-        <Section id="proyectos" class="py-20 max-w-[700px] mx-auto">
-            <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
+        <Section id="proyectos" class="py-30 ">
+            <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10 justify-center text-center">
                 <Case class="size-9"></Case>
                 Proyectos
             </h2>
-            
             <Proyecto></Proyecto>
         </Section>
 
