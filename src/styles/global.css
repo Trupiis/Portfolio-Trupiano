@@ -6,6 +6,21 @@
   }
 }
 
+@keyframes animate-slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+.animate-slide{
+  animation: animate-slide 20s linear infinite;
+}
+
+
 .header-mecha {
   position: relative;
   overflow: hidden;
