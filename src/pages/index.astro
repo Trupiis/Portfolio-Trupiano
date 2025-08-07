@@ -7,7 +7,6 @@ import Proyecto from "../components/Proyectos.astro"
 import ButtonInfo from '../components/ButtonInfo.astro';
 import Tecnologias from '../components/Tecnologias.astro';
 import Tools from '../icons/Tools.astro';
-import ButtonFloar from '../components/ButtonFloar.astro';
 
 //icons
 import Book from '../icons/Book.astro';
@@ -73,7 +72,7 @@ import Behance from '../icons/Behance.astro';
                 </ul>
             </Section>
 
-            <Section id="tecnologias" class="py-20 max-w-[1000px] mx-auto">
+            <Section id="tecnologias" class="py-20 max-w-[1000px] max-md:max-w-[700px] mx-auto">
             <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-20 justify-center text-center">
                 <Tools class="size-9"></Tools>
                 Tecnologias
@@ -99,8 +98,6 @@ import Behance from '../icons/Behance.astro';
             </h2>
             <Proyecto></Proyecto>
         </Section>
-
-        <ButtonFloar class="size-9"></ButtonFloar>
         
     </main>
 </Layout>

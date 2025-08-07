@@ -130,9 +130,9 @@ const proyectos = JSON.stringify(PROYECTOS);
     </button>
   </div>
 
-  <div class="grid grid-cols-2 gap-10">
+  <div class="grid grid-cols-2 max-md:grid-cols-1 gap-10">
     {PROYECTOS.map(({ title, description, Preview, tags, image, visualizar ,URL, WEBSITE, Icon, type, categoria }) => (
-      <div class="flex" x-show={`filtro === 'todos' || filtro === '${categoria}'`}>
+      <div class="flex justify-center" x-show={`filtro === 'todos' || filtro === '${categoria}'`}>
         <div class="p-6 bg-[#87878736] shadow-2xl shadow-black rounded-2xl">
           
           <li class="flex gap-3 pb-10">
