@@ -19,7 +19,7 @@ import Behance from '../icons/Behance.astro';
 
 ---
 
-<Layout>
+<!-- <Layout>
     <main class="p-6">
         <Section class="pb-30 pt-30 max-w-[700px] w-full mx-auto px-4">
             <div class="flex items-center">
@@ -81,23 +81,48 @@ import Behance from '../icons/Behance.astro';
             </Section>
 
 
-
-        <!-- <Section id="educacion" class="py-20 max-w-[750px] mx-auto" >
-            <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-10">
-                <Book class="size-9"></Book>
-                Educación
-            </h2>
-
-            <Education></Education>
-        </Section> -->
-
         <Section id="proyectos" class="py-20 max-w-[1000px]">
             <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-20 justify-center text-center">
                 <Case class="size-9"></Case>
                 Proyectos
             </h2>
             <Proyecto></Proyecto>
-        </Section>
+        </Section> 
+
         
     </main>
+</Layout> -->
+
+<Layout title="Bienvenido">
+    <div class="h-screen w-screen relative overflow-hidden">
+    <!-- Mitad izquierda en diagonal -->
+    
+    <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 pl-20 text-white flex flex-col justify-center items-start
+[clip-path:polygon(0%_0%,55%_0%,40%_100%,0%_100%)]
+before:absolute before:inset-0 before:bg-black/30 before:z-0
+hover:[clip-path:polygon(0%_0%,65%_0%,50%_100%,0%_100%)]
+duration-200 ">
+  
+  <h1 class="text-4xl font-bold relative z-10">Desarrollador Web</h1>
+  <span class="text-md font-extralight mb-4 relative z-10">Frontend Developer</span>
+  <a href="/desarrollador" class="relative z-10">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition">
+      Ir a Desarrollador Web
+    </button>
+  </a>
+</div>
+
+
+
+    <!-- Mitad derecha (rellena el resto) -->
+    <div class="absolute inset-0 bg-linear-65 from-purple-500 to-pink-500 text-white flex flex-col justify-center items-end pr-30 [clip-path:polygon(55%_0,100%_0,100%_100%,40%_100%)] before:absolute before:inset-0 before:bg-black/30 before:z-0 hover:[clip-path:polygon(45%_0,100%_0,100%_100%,30%_100%)] duration-200">
+      <h1 class="text-4xl font-bold relative z-10">Diseñador Gráfico</h1>
+      <span class="text-md font-extralight mb-4 relative z-10">Diseño gráfico & UX/UI</span>
+      <a href="/diseñador" class="relative z-10">
+        <button class="bg-green-500 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl transition">
+          Ir a Diseñador Gráfico
+        </button>
+      </a>
+    </div>
+  </div>
 </Layout>
