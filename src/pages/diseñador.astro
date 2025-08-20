@@ -1,0 +1,118 @@
+---
+import Badge from '../components/Badge.astro';
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Education from '../components/Education.astro';
+import Proyecto from "../components/Proyectos.astro"
+import ButtonInfo from '../components/ButtonInfo.astro';
+import Tecnologias from '../components/Tecnologias.astro';
+import Tools from '../icons/Tools.astro';
+import Header from "../components/Header.astro"
+import Footer from '../components/Footer.astro';
+import SobreMi from "../components/SobreMi.astro"
+import ButtonFloat from '../components/ButtonFloat.astro';
+
+//icons
+import Book from '../icons/Book.astro';
+import Case from '../icons/Case.astro';
+import GitHub from '../icons/GitHub.astro';
+import LinkedIn from '../icons/LinkedIn.astro';
+import Mail from '../icons/Mail.astro';
+import Behance from '../icons/Behance.astro';
+import Person from '../icons/Person.astro';
+
+1
+
+
+---
+<Layout>
+
+    <!-- <ButtonInfo href="/" >Volver al inicio</ButtonInfo> -->
+    <ButtonFloat class="size-9"></ButtonFloat>
+
+    <div class="finisher-design fixed top-0 left-0 z-[-2] w-full h-screen bg-white"></div>
+
+
+    <div class="flex justify-center">
+        <Header class="mt-8 font-light border-2 border-[#51D8F3] bg-[#acacac]/30 backdrop-blur-xs text-xs fixed space-x-4 rounded-full p-4.5 py-1.5 z-50 text-white"></Header>
+    </div>
+
+
+    <Section class="pb-60 pt-60 max-w-[700px] w-full mx-auto px-4">
+        <img src="/Trupiano-foto.png" alt="" class="h-30 w-30 object-cover rounded-full mb-5">
+
+        <h1 class="max-lg:flex-col font-bebas flex text-5xl font-bold gap-x-10 gap-y-4 pb-4">
+            Elian Trupiano 
+            
+            <div class="flex items-center">
+                <a class="flex items-cente transition-transform duration-300 lg:hover:scale-110" target="_blank" href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/"><Badge>Disponible para trabajar</Badge></a> 
+            </div>
+        </h1>
+
+         <p class="text-lg font-light pb-5">
+            Más de 2 años de experiencia como <span class="text-[#51D8F3] font-semibold">Desarrollador Front-end</span>, especializado en el stack <span class="text-[#51D8F3] pb-10 font-semibold">MERN</span>. 
+            
+            <p class="text-lg pb-5 font-light"> 
+                Me enfoco en crear interfaces modernas, optimizadas y orientadas a resolver de forma efectiva las necesidades de cada   proyecto.
+            </p>
+        </p>
+      
+        
+        <ul class="flex gap-x-5">
+                    <div class="gap-5 max-lg:flex-col flex">
+                        <li>
+                            <a href="https://github.com/Trupiis" target="_blank" class="flex gap-x-2.5 bg-gray-900 p-2.5 rounded-lg">
+                            <GitHub />
+                            <span>GitHub</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/" target="_blank" class="flex gap-x-2.5 bg-gray-900 p-2.5 rounded-lg">
+                            <LinkedIn/>
+                            <span>LinkedIn</span>
+                            </a>
+                        </li>
+                    </div>
+
+                <div class="gap-5 max-lg:flex-col flex">
+                    
+                    <!-- <li>
+                        <a href="https://www.behance.net/elitrupi" target="_blank" class="inline-flex gap-x-2.5 bg-gray-900 p-2.5 rounded-lg">
+                            <Behance/>
+                            <span>Behance</span>
+                        </a>
+                    </li> -->
+                    
+                    <li>
+                        <a href="mailto:eliantrupianodg@gmail.com"  class="flex gap-x-2.5 bg-gray-900 p-2.5 rounded-lg">
+                            <Mail/>
+                            <span>Eliantrupianodg@gmail.com</span>
+                        </a>
+                    </li>
+                </div>
+
+        </ul>
+    </Section>
+
+    <div class="bg-linear-to-br from-[#02020c] to-[#02131f] h-auto">
+        <Section id="tecnologias" class="py-20 max-w-[1000px] max-md:max-w-[700px] mx-auto">
+            <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-20 justify-center text-center">
+                <Tools class="size-9"></Tools>
+                Tecnologias
+            </h2>
+            
+            <Tecnologias></Tecnologias>
+        </Section>
+
+        <Section id="proyectos" class="py-20 max-w-[1000px] mx-auto ">
+            <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-20 justify-center text-center">
+                <Case class="size-9"></Case>
+                Proyectos
+            </h2>
+            <Proyecto></Proyecto>
+        </Section> 
+    </div>
+
+    <Footer></Footer>
+</Layout>

@@ -1,2 +1,6 @@
-<a class="text-gray-900 bg-gray-300
-font-medium rounded-md p-4 me-4 mb-2"><slot/></a>
+---
+const { href = "#" } = Astro.props;
+---
+
+<a href={href} class="text-gray-900 bg-gray-300
+font-medium text-sm rounded-md p-2 me-4 mb-2"><slot/></a>

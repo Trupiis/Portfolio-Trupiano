@@ -3,6 +3,7 @@ import "../styles/global.css"
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro";
 import '@fontsource-variable/sora';
+import "@fontsource/bebas-neue"; 
 ---
 
 <!doctype html>
@@ -11,33 +12,79 @@ import '@fontsource-variable/sora';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
-		<title>Portfolio Trupi</title>
+		<title>Portfolio Elian Trupiano</title>
 
 		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 	</head>
 	<body>
-		<div class="fixed top-0 left-0 z-[-2] w-full h-full bg-black">
-			<div class="absolute top-0 left-0 right-0 bottom-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-			<div class="absolute top-[-15%] left-1/2 translate-x-[-90%] h-[1000px] w-[1200px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]"></div>
-		</div>		
 		<slot />
 		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+		<script src="/js/finisher-header.es5.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+  // Monta Finisher sobre 1 elemento puntual
+  function mountFinisher(el, config) {
+    if (!el) return;
+    const marker = 'finisher-header';
+    el.classList.add(marker);        // marcar solo este target
+    new FinisherHeader(config);      // inicializar con su config
+    el.classList.remove(marker);     // limpiar para no afectar el siguiente init
+  }
+
+  // Seleccioná los contenedores (si no existen, no pasa nada)
+  const devEl    = document.querySelector('.finisher-dev');
+  const designEl = document.querySelector('.finisher-design');
+
+  // Config 1: DESARROLLADOR (oscuro) — tu config actual
+  const devConfig = {
+    count: 100,
+    size: { min: 2, max: 8, pulse: 0 },
+    speed: { x: { min: 0, max: 0.4 }, y: { min: 0, max: 0.6 } },
+    colors: { background: "#090909", particles: ["#51d8f3", "#116373"] },
+    blending: "lighten",
+    opacity: { center: 1, edge: 0 },
+    skew: -0.7,
+    shapes: ["s", "t"]
+  };
+
+  // Config 2: DISEÑADOR (claro) — tu nueva config
+  const designConfig = {
+    count: 90,
+    size: { min: 1, max: 20, pulse: 0 },
+    speed: { x: { min: 0, max: 0.4 }, y: { min: 0, max: 0.1 } },
+    colors: { background: "#f1f1f1", particles: ["#ffffff", "#87ddfe", "#000000"] },
+    blending: "screen",
+    opacity: { center: 0, edge: 0.4 },
+    skew: -0,
+    shapes: ["c", "s", "t"]
+  };
+
+  // Montar cada fondo (solo si existe en esta página)
+  mountFinisher(devEl, devConfig);
+  mountFinisher(designEl, designConfig);
+</script>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		display: flex;
-		position: relative;
-		align-items: center;
-		flex-direction: column;
-		font-family: 'Sora Variable', sans-serif;
-		color: #ffffff;
-		margin: 0 auto;
-		min-height: 100vh;
-		scroll-behavior: smooth;
-	}
+<style is:global>
+
+  body {
+    font-family: 'Sora Variable', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    cursor: url("/Cursor/handcursor.png") 0 0, auto;
+  }
+
+  .font-bebas {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: .02em;
+  }
+
+  button:hover, a:hover {
+    cursor: url("/Cursor/handcursorhover.png") 16 16, pointer !important;
+  }
 </style>

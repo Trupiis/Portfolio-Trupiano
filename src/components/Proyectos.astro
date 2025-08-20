@@ -8,6 +8,7 @@ import AI from "../icons/AI.astro"
 import GitHub from "../icons/GitHub.astro"
 import Behance from "../icons/Behance.astro"
 import ARROW from "../icons/Arrow.astro"
+import ButtonInfo from "./ButtonInfo.astro"
 
 
 const TAGS = {
@@ -68,6 +69,19 @@ const PROYECTOS = [
         visualizar : "Preview"
     },
     {
+        title: "Air Foodwing | Comida de lujo",
+        categoria: "desarrollo",
+        description: "Proyecto desarrollado con NextJS y Tailwind CSS, enfocado en lograr un sitio web moderno, rápido y optimizado.",
+        tags: [TAGS.NEXT, TAGS.TAILWIND],
+        image: "/proyectos/p05.png",
+        type: "<Código/>",
+        URL : "https://github.com/Trupiis/AirFood",
+        WEBSITE: "https://air-food-zeta.vercel.app/",
+        Icon: TAGS.GITHUB,
+        Preview: TAGS.ARROW,
+        visualizar : "Preview"
+    },
+    {
         title: "Ecommerce GoPro Shop",
         categoria: "desarrollo",
         description: "Ecommerce desarrollado con NextJS incluyendo Firestore como base de datos para darle la funcionalidad a la tienda.",
@@ -79,8 +93,8 @@ const PROYECTOS = [
         Icon: TAGS.GITHUB,
         Preview: TAGS.ARROW,
         visualizar : "Preview"
-    },
-    {
+    }
+    /* {
         title: "Manual de marca",
         categoria: "diseño",
         description: "Proyecto desarrollado con Adobe Illustrator, enfocado en la creación de una identidad visual coherente y profesional. Incluye la construcción de la identidad visual de la marca y la guia del correcto uso de la misma.",
@@ -99,13 +113,13 @@ const PROYECTOS = [
         type: "Behance",
         URL : "https://www.behance.net/gallery/229887605/Monograma-Marca-Mariana-Duque",
         Icon: TAGS.BEHANCE
-    },
+    }, */
 ]
 
 const proyectos = JSON.stringify(PROYECTOS);
 ---
 
-<div x-data="{ filtro: 'todos' }">
+<!-- <div x-data="{ filtro: 'todos' }">
   <div class="flex gap-3 mb-10 justify-center">
     <button
       @click="filtro = 'todos'"
@@ -128,41 +142,65 @@ const proyectos = JSON.stringify(PROYECTOS);
     >
       Diseño Gráfico
     </button>
-  </div>
+  </div> -->
 
-  <div class="grid grid-cols-2 max-md:grid-cols-1 gap-10">
+<div class="grid grid-cols-1 space-y-10">
     {PROYECTOS.map(({ title, description, Preview, tags, image, visualizar ,URL, WEBSITE, Icon, type, categoria }) => (
+      
       <div class="flex justify-center" x-show={`filtro === 'todos' || filtro === '${categoria}'`}>
-        <div class="p-6 bg-[#87878736] shadow-2xl shadow-black rounded-2xl">
-          
-          <li class="flex gap-3 pb-10">
-            <span class="bg-[#232323] border-1 border-amber-50 text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-sm items-center w-auto">
-              <a href={URL} target="_blank" class="flex items-center gap-x-2 pr-1.5 pl-1.5">
-                {Icon === TAGS.BEHANCE && <Behance class="size-5" />}
-                {Icon === TAGS.GITHUB && <GitHub class="size-5" />}
-                {type}
-              </a>
-            </span>
+        <div class="p-8 bg-linear-to-br from-[#535353] to-[#02131f] shadow-2xl shadow-black rounded-2xl flex-col space-x-5"> 
+          <div class="flex space-x-15">
+              
+              <img class="hover:scale-102 duration-200 rounded-lg w-lg shadow-xl shadow-black" src={image} alt={`Foto del proyecto ${title}`} />
 
-            {categoria === 'desarrollo' && (
-            <span class="bg-[#232323] border-1 border-amber-50 text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-sm items-center w-auto">
-              <a href={WEBSITE} target="_blank" class="flex items-center gap-x-2 pr-1.5 pl-1.5">
-                {Preview === TAGS.ARROW && <ARROW class="size-5" />}
-                {visualizar}
-              </a>
-            </span>
-                    )}
-          </li>
+              <div class="flex flex-col justify-between">
+                  <div class="space-y-5">
+                    <h3 class="text-2xl font-medium border-b-2  border-white pb-2">{title}</h3>
+                    <ul class="flex flex-wrap gap-4">
+                      {tags.map(({name, class: tagClass, icon: Icon})=>{
+                        return(
+                          <li class={tagClass}>
+                            {Icon && <Icon class="size-4" />}
+                            <span>{name}</span>
+                          </li>
+                            )
+                      })}
+                    </ul>
 
-          <img class="hover:scale-102 duration-200 rounded-lg w-lg mb-2" src={image} alt={`Foto del proyecto ${title}`} />
+                    <p class="text-base font-light">{description}</p>                    
+                  </div>
+
+               
+
+                <div class="pt-10">
+                  <li class="flex gap-3">
+                      <span class="bg-[#232323] border-1 border-amber-50 text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-sm items-center w-auto">
+                        <a href={URL} target="_blank" class="flex items-center gap-x-2 pr-1.5 pl-1.5">
+                          {Icon === TAGS.BEHANCE && <Behance class="size-5" />}
+                          {Icon === TAGS.GITHUB && <GitHub class="size-5" />}
+                          {type}
+                        </a>
+                      </span> 
+
+                        {categoria === 'desarrollo' && (
+                        <span class="bg-[#232323] border-1 border-amber-50 text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-sm items-center w-auto">
+                          <a href={WEBSITE} target="_blank" class="flex items-center gap-x-2 pr-1.5 pl-1.5">
+                            {Preview === TAGS.ARROW && <ARROW class="size-5" />}
+                            {visualizar}
+                          </a>
+                        </span>
+                        )}
+                    </li>
+                </div>
+
+              </div> 
+          </div>
+
+        
         </div>
+      
       </div>
     ))}
-  </div>  
+</div>  
 
-
-
-</div>
-
-</div>
 

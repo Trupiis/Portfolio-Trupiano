@@ -15,11 +15,13 @@
   }
 }
 
-
 .animate-slide{
-  animation: animate-slide 20s linear infinite;
+  animation: animate-slide 30s linear infinite;
 }
 
+.font-sora {
+  font-family: 'Sora Variable', sans-serif;
+}
 
 .header-mecha {
   position: relative;

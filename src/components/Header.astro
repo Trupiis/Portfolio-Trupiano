@@ -1,8 +1,20 @@
-<header class="header-mecha flex justify-center items-center mt-10 p-4 px-6 rounded-full mb-10">
-    <nav class="flex gap-x-6 text-md">
+---
+const {class: ClassName} = Astro.props
+---
+
+<!-- <header class="border-2 border-[#51D8F3] z-50 flex justify-center w-auto items-center mt-10 p-2 px-6 rounded-full mb-10">
+    <nav class="flex gap-x-6 text-sm">
         <a href="#top" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Inicio</a>
         <a href="#tecnologias" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Tecnologías</a>
         <a href="#proyectos" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Proyectos</a>
         <a href="https://api.whatsapp.com/send?phone=541135996947&text=%C2%A1Hola%20Elian!%0A%C2%BFPodemos%20conversar%3F" target="_blank" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Contacto</a>
     </nav>
-</header>
+</header> -->
+
+
+    <div class={`${ClassName}`}>
+        <a href="#top" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Inicio</a>
+        <a href="#tecnologias" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Tecnologías</a>
+        <a href="#proyectos" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Proyectos</a>
+        <a href="https://api.whatsapp.com/send?phone=541135996947&text=%C2%A1Hola%20Elian!%0A%C2%BFPodemos%20conversar%3F" target="_blank" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Contacto</a>
+    </div>
