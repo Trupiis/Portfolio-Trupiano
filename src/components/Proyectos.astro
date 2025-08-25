@@ -146,16 +146,15 @@ const proyectos = JSON.stringify(PROYECTOS);
 
 <div class="grid grid-cols-1 space-y-10">
     {PROYECTOS.map(({ title, description, Preview, tags, image, visualizar ,URL, WEBSITE, Icon, type, categoria }) => (
-      
-      <div class="flex justify-center" x-show={`filtro === 'todos' || filtro === '${categoria}'`}>
-        <div class="p-8 bg-linear-to-br from-[#535353] to-[#02131f] shadow-2xl shadow-black rounded-2xl flex-col space-x-5"> 
-          <div class="flex space-x-15">
-              
-              <img class="hover:scale-102 duration-200 rounded-lg w-lg shadow-xl shadow-black" src={image} alt={`Foto del proyecto ${title}`} />
+        <div class="p-8 bg-linear-to-br from-[#535353] to-[#02131f] shadow-2xl shadow-black rounded-2xl flex-col"> 
 
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+              <img class="hover:scale-102 duration-200 rounded-lg shadow-xl shadow-black" src={image} alt={`Foto del proyecto ${title}`} />
+
+            <div>
               <div class="flex flex-col justify-between">
                   <div class="space-y-5">
-                    <h3 class="text-2xl font-medium border-b-2  border-white pb-2">{title}</h3>
+                    <h3 class="text-2xl font-medium pb-2">{title}</h3>
                     <ul class="flex flex-wrap gap-4">
                       {tags.map(({name, class: tagClass, icon: Icon})=>{
                         return(
@@ -192,14 +191,10 @@ const proyectos = JSON.stringify(PROYECTOS);
                         )}
                     </li>
                 </div>
-
               </div> 
           </div>
-
-        
+          </div>
         </div>
-      
-      </div>
     ))}
 </div>  
 

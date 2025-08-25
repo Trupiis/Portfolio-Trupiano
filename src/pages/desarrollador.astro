@@ -11,6 +11,7 @@ import Header from "../components/Header.astro"
 import Footer from '../components/Footer.astro';
 import SobreMi from "../components/SobreMi.astro"
 import ButtonFloat from '../components/ButtonFloat.astro';
+import Contacto from "../components/Contacto.astro"
 
 //icons
 import Book from '../icons/Book.astro';
@@ -20,24 +21,20 @@ import LinkedIn from '../icons/LinkedIn.astro';
 import Mail from '../icons/Mail.astro';
 import Behance from '../icons/Behance.astro';
 import Person from '../icons/Person.astro';
+import Phone from '../icons/Phone.astro';
 
 1
 
 
 ---
 <Layout>
-
     <!-- <ButtonInfo href="/" class=" sticky">Volver al inicio</ButtonInfo> -->
     <ButtonFloat class="size-9"></ButtonFloat>
 
 <div class="finisher-header finisher-dev fixed top-0 left-0 z-[-2] w-full h-screen bg-black"></div>
-
     <div class="flex justify-center">
         <Header class="mt-8 font-light border-2 border-[#51D8F3] bg-[#acacac]/30 backdrop-blur-xs text-xs fixed space-x-4 rounded-full p-4.5 py-1.5 z-50 text-white"></Header>
     </div>
-
-
-  
 
     <Section class="pb-60 pt-60 max-w-[700px] w-full mx-auto px-4">
         <img src="/Trupiano-foto.png" alt="" class="h-30 w-30 object-cover rounded-full mb-5">
@@ -96,9 +93,9 @@ import Person from '../icons/Person.astro';
         </ul>
     </Section>
 
-    <div class="bg-linear-to-br from-[#02020c] to-[#02131f] h-auto">
+    <div class="bg-linear-to-br from-[#02192a] to-[#010105] border-b-1 border-t-1 border-white h-auto">
         <Section id="tecnologias" class="py-20 max-w-[1000px] max-md:max-w-[700px] mx-auto">
-            <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-20 justify-center text-center">
+            <h2 class="font-bebas flex items-center gap-x-2 text-4xl font-semibold mb-20 justify-center text-center">
                 <Tools class="size-9"></Tools>
                 Tecnologias
             </h2>
@@ -106,14 +103,24 @@ import Person from '../icons/Person.astro';
             <Tecnologias></Tecnologias>
         </Section>
 
-        <Section id="proyectos" class="py-20 max-w-[1000px] mx-auto ">
-            <h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-20 justify-center text-center">
+        <Section id="proyectos" class="py-20 px-6 max-w-[1000px] mx-auto">
+            <h2 class="font-bebas flex items-center gap-x-2 text-4xl font-semibold mb-20 justify-center text-center">
                 <Case class="size-9"></Case>
                 Proyectos
             </h2>
             <Proyecto></Proyecto>
         </Section> 
+
     </div>
 
-    <Footer></Footer>
+    <div class="bg-linear-to-br from-[#000000] to-[#051017]">
+        <Section id="contacto" class="py-20 max-w-[1000px] mx-auto border-b-1">            
+            <h2 class="font-bebas flex items-center gap-x-2 text-4xl font-semibold mb-20 justify-center text-center">
+                <Phone class="size-9"></Phone>
+                Contacto
+            </h2>
+            <Contacto></Contacto>
+        </Section>
+    </div>
+    
 </Layout>
