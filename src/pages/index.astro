@@ -94,42 +94,47 @@ import Behance from '../icons/Behance.astro';
 </Layout> -->
 
 <Layout title="Bienvenido">
-    <div class="h-screen w-screen relative overflow-hidden">
-    <!-- Mitad izquierda en diagonal -->
-    
-    <div class="absolute inset-0 bg-gradient-to-r bg-[url('/fnegro.webp')] bg-cover  text-white flex flex-col justify-center items-start
-        [clip-path:polygon(0%_0%,60%_0%,45%_100%,0%_100%)]
-        before:absolute before:inset-0 before:bg-black/85 before:z-0
-        hover:[clip-path:polygon(0%_0%,65%_0%,50%_100%,0%_100%)]
-        duration-500 hover:scale-105 ">
+  <div class="h-screen w-screen relative overflow-hidden">
 
-    <div class="ml-40 flex flex-col">   
-        <h1 class="text-4xl font-bold relative z-10">Desarrollador Web</h1>
-        <span class="text-md font-extralight mb-4 relative z-10">Frontend Developer</span>
-        <a href="/desarrollador" class="relative z-10">
-            <button class="bg-[#51D8F3] hover:bg-[#0c5260] hover:text-white duration-500 text-[#2a2a2a] font-semibold px-6 py-2.5 rounded-xl transition">
-                Ir a Desarrollador Web
-            </button>
+    <!-- Developer -->
+    <div
+      class="relative h-1/2 md:h-full flex flex-col justify-center items-start text-white
+             bg-[url('/fnegro.webp')] bg-cover md:bg-center
+             before:absolute before:inset-0 before:bg-black/85 before:-z-0
+             md:absolute md:inset-0
+             md:[clip-path:polygon(0%_0%,60%_0%,45%_100%,0%_100%)]
+             md:hover:[clip-path:polygon(0%_0%,65%_0%,50%_100%,0%_100%)]
+             md:duration-500 md:hover:scale-105">
+      <div class="relative z-10 ml-30 flex flex-col">
+        <h1 class="text-4xl max-xl:text-2xl font-bold">Desarrollador Web</h1>
+        <span class="text-md max-xl:text-sm font-extralight mb-4">Frontend Developer</span>
+        <a href="/desarrollador">
+          <button class="bg-[#51D8F3] hover:bg-[#0c5260] text-[#2a2a2a] hover:text-white font-semibold px-6 py-2.5 rounded-xl transition">
+            Ir a Desarrollador Web
+          </button>
         </a>
-    </div> 
-</div>
+      </div>
+    </div>
 
-
-
-    <!-- Mitad derecha (rellena el resto) -->
-    
-    <div class="absolute inset-0 bg-linear-65 bg-[url('/fblanco.webp')] bg-cover text-white flex flex-col justify-center items-end [clip-path:polygon(60%_0,100%_0,100%_100%,45%_100%)] before:absolute before:inset-0 before:bg-black/70 before:z-0 hover:[clip-path:polygon(50%_0,100%_0,100%_100%,35%_100%)] duration-500 hover:scale-105">
-
-    <div class="mr-45 flex flex-col">
-        <h1 class="text-4xl font-bold relative z-10">Diseñador Gráfico</h1>
-        <span class="text-md font-extralight mb-4 relative z-10">Diseño gráfico & UX/UI</span>
-        <a href="/diseñador" class="relative z-10">
-            <button class="bg-[#2a2a2a] hover:bg-[#0c5260] hover:text-white duration-500 text-white font-semibold px-6 py-2.5 rounded-xl transition">
-                Ir a Diseñador Gráfico
-            </button>
+    <!-- Designer -->
+    <div
+      class="relative h-1/2 md:h-full flex flex-col justify-center items-end text-white
+             bg-[url('/fblanco.webp')] bg-cover md:bg-center
+             before:absolute before:inset-0 before:bg-black/70 before:-z-0
+             md:absolute md:inset-0
+             md:[clip-path:polygon(60%_0,100%_0,100%_100%,45%_100%)]
+             md:hover:[clip-path:polygon(50%_0,100%_0,100%_100%,35%_100%)]
+             md:duration-500 md:hover:scale-105">
+      <div class="relative z-10 mr-30 flex flex-col">
+        <h1 class="text-4xl max-xl:text-2xl font-bold">Diseñador Gráfico</h1>
+        <span class="text-md max-xl:text-sm font-extralight mb-4">Diseño gráfico & UX/UI</span>
+        <a href="/diseñador">
+          <button class="bg-[#2a2a2a] hover:bg-[#0c5260] text-white font-semibold px-6 py-2.5 rounded-xl transition">
+            Ir a Diseñador Gráfico
+          </button>
         </a>
-    </div> 
-    
-</div>
+      </div>
+    </div>
+
   </div>
 </Layout>

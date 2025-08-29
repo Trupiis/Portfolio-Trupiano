@@ -1,1 +1,5 @@
-<a href="/" class="fixed top-8 max-md:top-20 left-8 z-50 text-xs text-white border-b-1 hover:border-[#51D8F3] duration-300 border-white p-1 px-2 rounded-md">Volver al inicio</a>
+---
+const {class: ClassName} = Astro.props
+---
+
+<a href="/"  class={`${ClassName}`}>Volver al inicio</a>

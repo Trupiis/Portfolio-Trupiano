@@ -6,12 +6,18 @@ const {
 } = Astro.props;
 ---
 
-<div class="border-2 border-white h-auto w-[900px] rounded-2xl p-10 flex items-center space-x-10 space-y-5 justify-start mb-10">
-  <div class="space-y-5 w-[50%]">
-    <slot>
+<div
+  class="md:inline-flex max-md:flex max-md:flex-col
+         items-center gap-10
+         border-2 border-white rounded-2xl
+         p-6 max-md:p-4
+         w-auto max-w-full"
+>
+  <div class="space-y-5 w-[350px] flex-none max-md:w-full max-md:p-2 max-md:text-sm">
+    <slot />
   </div>
 
-  <div class="space-y-5 w-[50%]">
-    <img src={image} alt={alt} class="rounded-2xl">
+  <div class="w-[300px] flex-none max-md:w-full max-md:p-2">
+    <img src={image} alt={alt} class="rounded-2xl w-full h-auto" />
   </div>
 </div>

@@ -12,6 +12,9 @@ import Footer from '../components/Footer.astro';
 import SobreMi from "../components/SobreMi.astro"
 import ButtonFloat from '../components/ButtonFloat.astro';
 import CardRecorrido from '../components/CardRecorrido.astro';
+import Contacto from '../components/Contacto.astro';
+import Services from '../components/Services.astro';
+import ProyectosDesigner from "../components/ProyectosDesigner.astro"
 
 //icons
 import Book from '../icons/Book.astro';
@@ -21,6 +24,7 @@ import LinkedIn from '../icons/LinkedIn.astro';
 import Mail from '../icons/Mail.astro';
 import Behance from '../icons/Behance.astro';
 import Person from '../icons/Person.astro';
+import Phone from '../icons/Phone.astro';
 
 
 1
@@ -28,19 +32,23 @@ import Person from '../icons/Person.astro';
 
 ---
 <Layout>
-
     <!-- <ButtonInfo href="/" >Volver al inicio</ButtonInfo> -->
-    <ButtonFloat class="size-9"></ButtonFloat>
+    <ButtonFloat class="fixed top-8 max-md:top-20 left-8 z-50 text-xs border-b-1 hover:border-[#323232] duration-300 border-white p-1 px-2 rounded-md mix-blend-difference"></ButtonFloat>
 
     <div class="finisher-design fixed top-0 left-0 z-[-2] w-full h-screen bg-white"></div>
 
-
     <div class="flex justify-center">
-        <Header class="mt-8 font-light border-2 border-[#323232] bg-[#acacac]/30 backdrop-blur-xs text-xs fixed space-x-4 rounded-full p-4.5 py-1.5 z-50 text-black"></Header>
+        <Header class="mt-8 font-light border-2 bg-[#acacac]/30 backdrop-blur-xs text-xs fixed space-x-4 rounded-full p-4.5 py-1.5 z-50 mix-blend-difference">
+            <a href="#top" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Inicio</a>
+            <a href="#recorrido" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Sobre mí</a>
+            <a href="#servicios" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Servicios</a>
+            <a href="#proyectos" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Proyectos</a>
+            <a href="https://api.whatsapp.com/send?phone=541135996947&text=%C2%A1Hola%20Elian!%0A%C2%BFPodemos%20conversar%3F" target="_blank" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Contacto</a>
+        </Header>
     </div>
 
 
-    <Section class="pb-60 pt-60 max-w-[700px] justify-between flex w-full mx-auto max-md:flex-col max-md:p-6">
+    <Section id="top" class="pb-60 pt-60 max-w-[700px] justify-between flex w-full mx-auto max-md:flex-col max-md:p-6">
         
         <img src="/Trupiano-foto.png" alt="" class="h-50 w-50 object-cover rounded-full mb-5">
 
@@ -51,36 +59,94 @@ import Person from '../icons/Person.astro';
             </h1>
             <h2 class="max-lg:flex-col font-bebas flex max-md:text-4xl text-7xl font-bold gap-x-10 gap-y-4 pb-4 text-shadow-lg">DISEÑADOR DIGITAL</h2>
 
-            <div class="bg-[#323232] h-12 rounded-full">
-
+            <div class="bg-[#323232] h-12 rounded-full flex items-center justify-center px-4 ">
+                <h3 class="text-xl font-light">Diseño gráfico & Diseño UX/UI</h3>
             </div>
         </div>
 
     </Section>
 
-    <!-- <div class="bg-linear-to-br from-[#323232] to-[#010101] h-auto">
-        <Section id="tecnologias" class="py-20 max-w-[1400px] max-md:max-w-[700px] mx-auto">
-            <h2 class="flex font-bebas items-center gap-x-2 text-4xl font-semibold mb-20 justify-center text-center">
+    <div class="bg-linear-to-br from-[#323232] to-[#010101] h-auto">
+        <Section id="recorrido" class="py-20 max-w-[1400px] max-md:max-w-[700px] mx-auto">
+            <h2 class="flex font-bebas items-center gap-x-2 text-7xl font-semibold mb-20 justify-center text-center">
                 RECORRIDO
             </h2>
 
-            <div class="flex flex-col justify-between space-y-8">
-                <div class="self-start">
-                    <CardRecorrido image="/proyectos/p01.webp" alt="Proyecto 1"> 
+            <div class="flex flex-col gap-10 p-10">
+                <div class="w-full flex justify-start">
+                    <CardRecorrido image="/Des/miniaturas1.png" alt="Proyecto 1"> 
                         <p>Comencé en 2021 a dar mis primeros pasos como autodidacta en Photoshop CS6.</p>
                         <p>Un chico curioso que le apasionaba el arte, encontró su pasión por el diseño.</p>
                         <p>En un principio, ayudaba a streamers/youtubers, haciendo miniaturas de videos, iconos , emoticones para sus canales de streaming, flyers y otras cosas.</p>
                     </CardRecorrido>
                 </div>
-                <div class="self-end">
-                    <CardRecorrido image="/proyectos/p02.webp" alt="Proyecto 1"> 
+                <div class="w-full flex justify-center">
+                    <CardRecorrido image="/Des/miniaturas2.png" alt="Proyecto 1"> 
                         <p>Junto al inicio de mis estudios como Desarrollador Web en 2023, comencé a investigar el mundo del UX/UI, para mejorar mis habilidaes en ambas areas combinadas.</p>
                         <p>Así empecé a diseñar páginas webs, desde mi vista de diseño, sumandole mi nuevo conocimiento, orientaba mis proyectos de una manera inclusiva para ambas destrezas.</p>
                     </CardRecorrido>
                 </div>
+                <div class="w-full flex justify-end">
+                    <CardRecorrido image="/Des/miniaturas3.png" alt="Proyecto 1"> 
+                        <p>Hoy en día, me estoy formando en la oprimización del diseño gracias a la IA.</p>
+                        <p>Estoy dedicado a crear identidades visuales de marca y diseño de páginas web.</p>
+                    </CardRecorrido>
+                </div>
             </div>
         </Section>
-    </div> -->
+    </div>
 
-    <Footer></Footer>
+    <div class="bg-linear-to-br from-[#CFCED7] to-[#d9d9d9] h-auto p-10">
+        <Section id="servicios" class="py-20 max-w-[1400px] max-md:max-w-[700px] mx-auto flex-col">
+
+            <h2 class="flex font-bebas items-center gap-x-2 text-7xl font-semibold mb-20 justify-center text-center text-[#323232]">
+                SERVICIOS
+            </h2>
+
+
+            <div class="grid grid-cols-4 max-xl:grid-cols-2 max-md:grid-cols-1 gap-10 place-items-center">
+                <div class="border-2 border-[#323232] p-10 rounded-2xl space-y-10 text-[#323232] shadow-2xl shadow-black/30 w-[300px] h-[350px]">
+                    <h3 class="text-center text-4xl text-[#323232] font-bebas">DISEÑO UX/UI</h3>
+                    <p class="text-center">Diseño de interfaces atractivas y funcionales, enfocadas en la experiencia del usuario y la usabilidad en cada proyecto digital.</p>
+                </div>
+
+                <div class="border-2 border-[#323232] p-10 rounded-2xl space-y-10 text-[#323232] shadow-2xl shadow-black/30 w-[300px] h-[350px]">
+                    <h3 class="text-center text-4xl text-[#323232] font-bebas">BRANDING</h3>
+                    <p class="text-center">Construcción de identidades visuales sólidas que transmiten la esencia de cada marca, desde el logotipo hasta su aplicación completa.</p>
+                </div>
+
+                <div class="border-2 border-[#323232] p-10 rounded-2xl space-y-10 text-[#323232] shadow-2xl shadow-black/30 w-[300px] h-[350px]">
+                    <h3 class="text-center text-4xl text-[#323232] font-bebas">SOCIAL MEDIA</h3>
+                    <p class="text-center">Diseño de contenidos visuales para redes sociales que generan impacto, refuerzan la identidad y conectan con la audiencia.</p>
+                </div>
+
+                <div class="border-2 border-[#323232] p-10 rounded-2xl space-y-10 text-[#323232] shadow-2xl shadow-black/30 w-[300px] h-[350px]">
+                    <h3 class="text-center text-4xl text-[#323232] font-bebas">PIEZAS VISUALES</h3>
+                    <p class="text-center">Creación de piezas gráficas como posters, flyers, publicidades y tarjetas, cuidando la estética y el impacto visual en cada diseño.</p>
+                </div>
+            </div>
+        </Section>
+    </div>
+
+    <div class="bg-linear-to-br py-20 from-[#1d1d22] to-[#1e1b1b] h-auto p-10 flex flex-col justify-center place-items-center">
+        
+        <h2 class="flex font-bebas items-center gap-x-2 text-7xl font-semibold justify-center text-center">
+                PROYECTOS
+        </h2>
+
+        <Section id="proyectos" class="py-20 px-6 max-w-[1000px] mx-auto">
+            <ProyectosDesigner></ProyectosDesigner>
+        </Section> 
+    </div>
+
+    <div class="bg-linear-to-br from-[#CFCED7] to-[#d9d9d9] h-auto p-10">
+
+        <Section id="contacto" class="py-20 max-w-[1000px] mx-auto border-b-1">            
+            <h2 class="font-bebas flex items-center gap-x-2 text-7xl text-[#323232] font-semibold mb-20 justify-center text-center">
+                Contacto
+            </h2>
+            <Contacto theme="design"></Contacto>
+        </Section>
+    </div>
+
 </Layout>
