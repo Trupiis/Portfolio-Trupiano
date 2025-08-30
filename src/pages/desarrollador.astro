@@ -22,22 +22,24 @@ import Mail from '../icons/Mail.astro';
 import Behance from '../icons/Behance.astro';
 import Person from '../icons/Person.astro';
 import Phone from '../icons/Phone.astro';
-
+import House from '../icons/House.astro';
 1
 
 
 ---
 <Layout>
     <!-- <ButtonInfo href="/" class=" sticky">Volver al inicio</ButtonInfo> -->
-    <ButtonFloat class="fixed top-8 max-md:top-20 left-8 z-50 text-xs border-b-1 hover:border-[#51D8F3] duration-300 border-white p-1 px-2 rounded-md"></ButtonFloat>
 
+<!--     <ButtonFloat class="fixed top-8 max-md:top-20 left-8 z-50 text-xs border-b-1 hover:border-[#51D8F3] duration-300 border-white p-1 px-2 rounded-md"></ButtonFloat>
+ -->
 <div class="finisher-header finisher-dev fixed top-0 left-0 z-[-2] w-full h-screen bg-black"></div>
     <div class="flex justify-center">
-        <Header class="mt-8 font-light border-2 border-[#51D8F3] bg-[#acacac]/30 backdrop-blur-xs text-xs fixed space-x-4 rounded-full p-4.5 py-1.5 z-50 text-white">
-            <a href="#top" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Inicio</a>
+        <Header class="flex items-center mt-8 font-light border-2 border-[#323232] bg-[#323232]/30 backdrop-blur-xs text-xs fixed space-x-2 rounded-full p-4.5 py-0.5 z-50 text-white">
+            <a href="#top" class="hover:text-[#51D8F3] uration-100 ease-linear hover:scale-105">Inicio</a>
             <a href="#tecnologias" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Tecnologías</a>
             <a href="#proyectos" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Proyectos</a>
             <a href="https://api.whatsapp.com/send?phone=541135996947&text=%C2%A1Hola%20Elian!%0A%C2%BFPodemos%20conversar%3F" target="_blank" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Contacto</a>
+            <a href="/" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105"><House class="w-7 h-7"></a>
         </Header>
     </div>
 
@@ -69,14 +71,14 @@ import Phone from '../icons/Phone.astro';
                         </li>
 
                         <li class="flex">
-                            <a href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/" target="_blank" class="flex gap-x-2.5 bg-gray-900 px-4 py-2.5 rounded-lg">
+                            <a href="https://www.linkedin.com/in/elian-trupiano-3b2a78253/" target="_blank" class="flex gap-x-2.5 bg-gray-900 px-4 py-2.5 rounded-lg text-white">
                             <LinkedIn/>
                             <span>LinkedIn</span>
                             </a>
                         </li>
                     
                     <li class="flex">
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=eliantrupianogg@gmail.com&su=¡Hola Elian, me interesa trabajar con vos!"  class="flex gap-x-2.5 bg-gray-900 px-4 py-2.5 rounded-lg">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=eliantrupianogg@gmail.com&su=¡Hola Elian, me interesa trabajar con vos!"  class="flex gap-x-2.5 bg-gray-900 px-4 py-2.5 rounded-lg text-white">
                             <Mail/>
                             <span>Eliantrupianodg@gmail.com</span>
                         </a>

@@ -25,6 +25,7 @@ import Mail from '../icons/Mail.astro';
 import Behance from '../icons/Behance.astro';
 import Person from '../icons/Person.astro';
 import Phone from '../icons/Phone.astro';
+import House from "../icons/House.astro"
 
 
 1
@@ -33,34 +34,44 @@ import Phone from '../icons/Phone.astro';
 ---
 <Layout>
     <!-- <ButtonInfo href="/" >Volver al inicio</ButtonInfo> -->
-    <ButtonFloat class="fixed top-8 max-md:top-20 left-8 z-50 text-xs border-b-1 hover:border-[#323232] duration-300 border-white p-1 px-2 rounded-md mix-blend-difference"></ButtonFloat>
+
+<!--     <ButtonFloat class="fixed top-8 max-md:top-20 left-8 z-50 text-xs border-2 h-10 w-10 border-[#323232] p-1 rounded-full flex"></ButtonFloat>
+ -->
+    
 
     <div class="finisher-design fixed top-0 left-0 z-[-2] w-full h-screen bg-white"></div>
 
     <div class="flex justify-center">
-        <Header class="mt-8 font-light border-2 bg-[#acacac]/30 backdrop-blur-xs text-xs fixed space-x-4 rounded-full p-4.5 py-1.5 z-50 mix-blend-difference">
-            <a href="#top" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Inicio</a>
+        <Header class="flex items-center mt-8 font-light border-2 border-[#323232] bg-[#323232]/30 backdrop-blur-xs text-xs fixed space-x-2 rounded-full p-4.5 py-0.5 z-50 text-white">
+            <a href="#top" class="hover:text-[#51D8F3] uration-100 ease-linear hover:scale-105">Inicio</a>
             <a href="#recorrido" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Sobre mí</a>
-            <a href="#servicios" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Servicios</a>
             <a href="#proyectos" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Proyectos</a>
             <a href="https://api.whatsapp.com/send?phone=541135996947&text=%C2%A1Hola%20Elian!%0A%C2%BFPodemos%20conversar%3F" target="_blank" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Contacto</a>
+            <a href="/" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105"><House class="w-7 h-7"></a>
         </Header>
     </div>
 
 
-    <Section id="top" class="pb-60 pt-60 max-w-[700px] justify-between flex w-full mx-auto max-md:flex-col max-md:p-6">
-        
+    <Section id="top" class="pb-60 pt-60 max-w-[700px] max-md:pt-30 justify-between flex w-full mx-auto max-md:flex-col max-md:p-6">
+    
         <img src="/Trupiano-foto.png" alt="" class="h-50 w-50 object-cover rounded-full mb-5">
 
         <div>
-            <span class="max-lg:flex-col font-bebas flex max-md:text-4xl text-7xl font-bold gap-x-10 gap-y-4 text-shadow-lg">SOY</span>
-            <h1 class="max-lg:flex-col font-bebas flex max-md:text-4xl text-7xl font-bold gap-x-10 gap-y-4 text-[#323232] text-shadow-lg">
+            <span class="max-lg:flex-col font-bebas flex max-md:text-5xl text-7xl font-bold gap-x-10 gap-y-4 text-shadow-lg">SOY</span>
+            <h1 class="max-lg:flex-col font-bebas flex max-md:text-5xl text-7xl font-bold gap-x-10 gap-y-4 text-[#323232] text-shadow-lg">
                 Elian Trupiano 
             </h1>
-            <h2 class="max-lg:flex-col font-bebas flex max-md:text-4xl text-7xl font-bold gap-x-10 gap-y-4 pb-4 text-shadow-lg">DISEÑADOR DIGITAL</h2>
+            <h2 class="max-lg:flex-col font-bebas flex max-md:text-5xl text-7xl font-bold gap-x-10 gap-y-4 pb-4 text-shadow-lg">DISEÑADOR DIGITAL</h2>
 
-            <div class="bg-[#323232] h-12 rounded-full flex items-center justify-center px-4 ">
-                <h3 class="text-xl font-light">Diseño gráfico & Diseño UX/UI</h3>
+            <div class="flex space-x-3">
+                <div class="bg-[#323232] h-12 rounded-full flex items-center justify-center px-4 space-x-3">
+                    <h3 class="text-sm max-md:text-md font-light">Diseño gráfico & Diseño UX/UI</h3>
+                </div>
+                
+                <div class="bg-[#323232] h-12 rounded-full flex items-center justify-center px-4 space-x-3">
+                    <Behance></Behance>
+                    <h3 class="text-md max-md:text-md font-light">Behance</h3>
+                </div>
             </div>
         </div>
 
@@ -72,7 +83,7 @@ import Phone from '../icons/Phone.astro';
                 RECORRIDO
             </h2>
 
-            <div class="flex flex-col gap-10 p-10">
+            <div class="flex flex-col gap-10 p-6">
                 <div class="w-full flex justify-start">
                     <CardRecorrido image="/Des/miniaturas1.png" alt="Proyecto 1"> 
                         <p>Comencé en 2021 a dar mis primeros pasos como autodidacta en Photoshop CS6.</p>
@@ -128,7 +139,7 @@ import Phone from '../icons/Phone.astro';
         </Section>
     </div>
 
-    <div class="bg-linear-to-br py-20 from-[#1d1d22] to-[#1e1b1b] h-auto p-10 flex flex-col justify-center place-items-center">
+    <div class="bg-linear-to-br py-20 from-[#1d1d22] to-[#1e1b1b] h-auto flex flex-col justify-center place-items-center">
         
         <h2 class="flex font-bebas items-center gap-x-2 text-7xl font-semibold justify-center text-center">
                 PROYECTOS

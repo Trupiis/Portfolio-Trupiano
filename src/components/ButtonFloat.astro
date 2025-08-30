@@ -1,5 +1,10 @@
 ---
+import House from "../icons/House.astro"
+
 const {class: ClassName} = Astro.props
 ---
 
-<a href="/"  class={`${ClassName}`}>Volver al inicio</a>
+
+<a href="/"  class={`${ClassName}`}>
+     <House class="w-8 h-8"  />
+</a>
