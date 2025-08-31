@@ -34,11 +34,10 @@ import "@fontsource/bebas-neue";
       el.classList.remove(marker);     // limpiar para no afectar el siguiente init
     }
 
-    // Seleccioná los contenedores (si no existen, no pasa nada)
+    
     const devEl    = document.querySelector('.finisher-dev');
     const designEl = document.querySelector('.finisher-design');
 
-    // Config 1: DESARROLLADOR (oscuro) — tu config actual
     const devConfig = {
       count: 100,
       size: { min: 2, max: 8, pulse: 0 },
@@ -50,7 +49,6 @@ import "@fontsource/bebas-neue";
       shapes: ["s", "t"]
     };
 
-    // Config 2: DISEÑADOR (claro) — tu nueva config
     const designConfig = {
       count: 90,
       size: { min: 1, max: 20, pulse: 0 },
@@ -62,7 +60,6 @@ import "@fontsource/bebas-neue";
       shapes: ["c", "s", "t"]
     };
 
-    // Montar cada fondo (solo si existe en esta página)
     mountFinisher(devEl, devConfig);
     mountFinisher(designEl, designConfig);
 </script>
