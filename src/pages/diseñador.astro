@@ -10,7 +10,6 @@ import Tools from '../icons/Tools.astro';
 import Header from "../components/Header.astro"
 import Footer from '../components/Footer.astro';
 import SobreMi from "../components/SobreMi.astro"
-import ButtonFloat from '../components/ButtonFloat.astro';
 import CardRecorrido from '../components/CardRecorrido.astro';
 import Contacto from '../components/Contacto.astro';
 import Services from '../components/Services.astro';
@@ -25,16 +24,10 @@ import Mail from '../icons/Mail.astro';
 import Behance from '../icons/Behance.astro';
 import Person from '../icons/Person.astro';
 import Phone from '../icons/Phone.astro';
-
-
-1
-
+import ModeSwitch from '../components/ModeSwitch.astro';
 
 ---
 <Layout>
-    <!-- <ButtonInfo href="/" >Volver al inicio</ButtonInfo> -->
-    <ButtonFloat class="fixed top-8 max-md:top-20 left-8 z-50 text-xs border-b-1 hover:border-[#323232] duration-300 border-white p-1 px-2 rounded-md mix-blend-difference"></ButtonFloat>
-
     <div class="finisher-design fixed top-0 left-0 z-[-2] w-full h-screen bg-white"></div>
 
     <div class="flex justify-center">
@@ -45,6 +38,9 @@ import Phone from '../icons/Phone.astro';
             <a href="#proyectos" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Proyectos</a>
             <a href="https://api.whatsapp.com/send?phone=541135996947&text=%C2%A1Hola%20Elian!%0A%C2%BFPodemos%20conversar%3F" target="_blank" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Contacto</a>
         </Header>
+        <div class="fixed right-6 top-8 z-[60] max-md:top-20">
+        <ModeSwitch></ModeSwitch>
+    </div>
     </div>
 
 

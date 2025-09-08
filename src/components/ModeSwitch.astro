@@ -1,0 +1,42 @@
+---
+import Dev from "../icons/Dev.astro";
+import Pen from "../icons/Pen.astro"
+
+const {
+  devHref = "/desarrollador",
+  designHref = "/diseñador",
+  class: cls = "",
+} = Astro.props;
+
+const path = Astro.url?.pathname || "";
+const isDevServer = path.startsWith(devHref);
+const initialMode = isDevServer ? "dev" : "design";
+---
+
+<div class="relative inline-flex items-center h-8 w-36 rounded-full border border-white text-xs bg-[#1d1d22]">
+
+    <div class="flex justify-between w-full px-5 z-0">
+        <Dev class={`size-5 fill-[#f3f3f3]`} />
+        <Pen class={`size-5 fill-[#f3f3f3]`} />
+    </div>
+
+  <div
+    class="absolute top-0.5 bottom-0.5 w-[50%] rounded-full bg-white flex items-center justify-center transition-transform duration-300 z-10"
+    style={`transform: translateX(${Astro.url.pathname.startsWith("/desarrollador") ? "0" : "100%"});`}
+  >
+    {Astro.url.pathname.startsWith("/desarrollador") ? (
+      <Dev class="size-5 text-black" />
+    ) : (
+      <Pen class="size-5 text-black" />
+    )}
+  </div>
+
+  <a
+    href="/desarrollador"
+    class="absolute inset-y-0 left-0 w-1/2 z-20"
+  ></a>
+  <a
+    href="/diseñador"
+    class="absolute inset-y-0 right-0 w-1/2 z-20"
+  ></a>
+</div>
