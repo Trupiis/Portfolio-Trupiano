@@ -11,6 +11,7 @@ import Header from "../components/Header.astro"
 import Footer from '../components/Footer.astro';
 import SobreMi from "../components/SobreMi.astro"
 import Contacto from "../components/Contacto.astro"
+import SideBar from '../components/SideBar.astro'
 
 //icons
 import Book from '../icons/Book.astro';
@@ -22,23 +23,45 @@ import Behance from '../icons/Behance.astro';
 import Person from '../icons/Person.astro';
 import Phone from '../icons/Phone.astro';
 import ModeSwitch from '../components/ModeSwitch.astro';
+import Bars from "../icons/bars.astro"
 
 
 ---
 <Layout>
 <div class="finisher-header finisher-dev fixed top-0 left-0 z-[-2] w-full h-screen bg-black"></div>
-    <div class="flex justify-center">
-        <Header class="mt-8 font-light border-2 border-[#51D8F3] bg-[#acacac]/30 backdrop-blur-xs text-xs fixed space-x-4 rounded-full p-4.5 py-1.5 z-50 text-white">
+
+<div class="flex justify-center">
+    <Header class="mt-8 font-light border-2 border-[#51D8F3] bg-[#acacac]/30 backdrop-blur-xs text-xs fixed space-x-4 rounded-full p-4.5 py-1.5 z-50 text-white max-md:hidden">
             <a href="#top" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Inicio</a>
             <a href="#tecnologias" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Tecnologías</a>
             <a href="#proyectos" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Proyectos</a>
             <a href="https://api.whatsapp.com/send?phone=541135996947&text=%C2%A1Hola%20Elian!%0A%C2%BFPodemos%20conversar%3F" target="_blank" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Contacto</a>
-        </Header>
+    </Header>
     
-    <div class="fixed right-6 top-8 z-[60] max-md:top-20">
+    <div class="fixed left-6 top-8 z-[60] max-md:top-8">
         <ModeSwitch></ModeSwitch>
     </div>
+
+    <div class="fixed right-0 z-[60] max-md:top-8">
+        <SideBar>
+            <div id="menu-open" class="fixed right-0 top-0 z-[60] hidden">
+                <div class="bg-[#171717] w-50 h-screen p-6 shadow-[0_0_0_100vmax_rgba(0,0,0,0.5)] relative">
+                    <button id="close-button" class="absolute top-4 right-4">
+                        <Bars class="size-7 text-white" />
+                    </button>
+
+                    <ul class="flex flex-col space-y-5 mt-12 text-white">
+                        <a href="#top" class="hover:text-[#51D8F3] border-b-2 border-white pb-2 duration-100 ease-linear hover:scale-105">Inicio</a>
+                        <a href="#tecnologias" class="hover:text-[#51D8F3] border-b-2 border-white pb-2 duration-100 ease-linear hover:scale-105">Tecnologías</a>
+                        <a href="#proyectos" class="hover:text-[#51D8F3] border-b-2 border-white pb-2 duration-100 ease-linear hover:scale-105">Proyectos</a>
+                        <a href="https://api.whatsapp.com/send?phone=541135996947&text=%C2%A1Hola%20Elian!%0A%C2%BFPodemos%20conversar%3F" target="_blank" class="hover:text-[#51D8F3] border-b-2 border-white pb-2 duration-100 ease-linear hover:scale-105">Contacto</a>
+                    </ul>
+                </div>
+            </div>
+        </SideBar>
     </div>
+
+</div>
 
     <Section class="pb-60 pt-60 max-w-[700px] w-full mx-auto px-4">
         <img src="/Trupiano-foto.png" alt="" class="h-30 w-30 object-cover rounded-full mb-5">
