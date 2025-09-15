@@ -1,0 +1,103 @@
+---
+import PS from "../icons/PS.astro"
+import AI from "../icons/AI.astro"
+import GitHub from "../icons/GitHub.astro"
+import Behance from "../icons/Behance.astro"
+import ARROW from "../icons/Arrow.astro"
+import ButtonInfo from "./ButtonInfo.astro"
+
+
+const TAGS = {
+    ARROW: {
+        name: "Arrow",
+        class: "bg-[#000] text-white flex gap-x-1 p-1.5 pl-2.5 pr-2.5 rounded-full text-xs items-center w-auto",
+        icon: ARROW,
+    },
+    PHOTOSHOP: {
+        name: "Photoshop",
+        class: "bg-[#053656] text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-xs items-center w-auto",
+        icon: PS
+    },
+    ILLUSTRATOR: {
+        name: "Illustrator",
+        class: "bg-[#5D1B0D] text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-xs items-center w-auto",
+        icon: AI
+    },
+    GITHUB: {
+        name: "GitHub",
+        icon: GitHub
+    },
+    
+    BEHANCE: {
+        name: "Behance",
+        icon: Behance
+    },
+    
+}
+
+const PROYECTOS = [
+    {
+        title: "Manual de marca",
+        categoria: "diseño",
+        description: "Proyecto desarrollado con Adobe Illustrator, enfocado en la creación de una identidad visual coherente y profesional. Incluye la construcción de la identidad visual de la marca y la guia del correcto uso de la misma.",
+        tags: [TAGS.PHOTOSHOP, TAGS.ILLUSTRATOR],
+        image: "/proyectos/p03.webp",
+        type: "Behance",
+        URL : "https://www.behance.net/gallery/228557407/Manual-de-identidad-Crianza-Consciente",
+        Icon: TAGS.BEHANCE
+    },
+    {
+        title: "Logo tipográfico | Monograma ",
+        categoria: "diseño",
+        description: "Proyecto desarrollado con Adobe Illustrator, creación de una composición tipográfica que sintetiza las iniciales de la marca, transmitiendo profesionalismo, estilo y personalidad a través de formas limpias y bien equilibradas.",
+        tags: [TAGS.PHOTOSHOP, TAGS.ILLUSTRATOR],
+        image: "/proyectos/p04.webp",
+        type: "Behance",
+        URL : "https://www.behance.net/gallery/229887605/Monograma-Marca-Mariana-Duque",
+        Icon: TAGS.BEHANCE
+    },
+]
+
+const proyectos = JSON.stringify(PROYECTOS);
+---
+
+{PROYECTOS.map(({ title, description, tags, image ,URL, Icon, type}) => (
+  <div class="max-md:p-4 p-8 bg-linear-to-br from-[#535353] to-[#0a0b0c] shadow-2xl shadow-black rounded-2xl flex-col"> 
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+      <img class="hover:scale-102 duration-200 rounded-lg shadow-xl shadow-black" src={image} alt={`Foto del proyecto ${title}`} />
+
+      <div>
+        <div class="flex flex-col justify-between">
+          <div class="space-y-5">
+            <h3 class="max-md:text-xl text-2xl font-medium pb-2">{title}</h3>
+            <ul class="flex flex-wrap gap-4">
+              {tags.map(({name, class: tagClass, icon: Icon})=>{
+                return(
+                  <li class={tagClass}>
+                    {Icon && <Icon class="size-4" />}
+                    <span>{name}</span>
+                  </li>
+                      )
+              })}
+            </ul>
+
+            <p class="text-base font-light">{description}</p>                    
+          </div>   
+
+          <div class="pt-10">
+            <li class="flex gap-3">
+              <span class="bg-[#232323] border-1 border-amber-50 text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-sm items-center w-auto">
+                <a href={URL} target="_blank" class="flex items-center gap-x-2 pr-1.5 pl-1.5">
+                  {Icon === TAGS.BEHANCE && <Behance class="size-5" />}
+                  {Icon === TAGS.GITHUB && <GitHub class="size-5" />}
+                  {type}
+                </a>
+              </span> 
+            </li>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+))}
+
