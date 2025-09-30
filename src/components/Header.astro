@@ -1,7 +1,8 @@
 ---
 const {class: ClassName} = Astro.props
+import Bars from "../icons/bars.astro"
 ---
 
-    <div class={`${ClassName}`}>
+    <div class={`${ClassName} max-md:hidden`}>
         <slot>
     </div>

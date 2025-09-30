@@ -14,6 +14,7 @@ import CardRecorrido from '../components/CardRecorrido.astro';
 import Contacto from '../components/Contacto.astro';
 import Services from '../components/Services.astro';
 import ProyectosDesigner from "../components/ProyectosDesigner.astro"
+import SideBar from "../components/SideBar.astro"
 
 //icons
 import Book from '../icons/Book.astro';
@@ -25,36 +26,57 @@ import Behance from '../icons/Behance.astro';
 import Person from '../icons/Person.astro';
 import Phone from '../icons/Phone.astro';
 import ModeSwitch from '../components/ModeSwitch.astro';
+import Bars from '../icons/bars.astro';
 
 ---
 <Layout>
     <div class="finisher-design fixed top-0 left-0 z-[-2] w-full h-screen bg-white"></div>
 
     <div class="flex justify-center">
-        <Header class="mt-8 font-light border-2 bg-[#acacac]/30 backdrop-blur-xs text-xs fixed space-x-4 rounded-full p-4.5 py-1.5 z-50 mix-blend-difference">
+        <Header class="mt-8 font-light border-2 bg-[#171717]/30 backdrop-blur-xs text-xs fixed space-x-3 rounded-full p-4.5 py-1.5 z-50">
             <a href="#top" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Inicio</a>
             <a href="#recorrido" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Sobre mí</a>
             <a href="#servicios" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Servicios</a>
             <a href="#proyectos" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Proyectos</a>
             <a href="https://api.whatsapp.com/send?phone=541135996947&text=%C2%A1Hola%20Elian!%0A%C2%BFPodemos%20conversar%3F" target="_blank" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105">Contacto</a>
         </Header>
-        <div class="fixed right-6 top-8 z-[60] max-md:top-20">
-            
-        <ModeSwitch></ModeSwitch>
+        
+        <div class="fixed left-6 top-8 z-[60] max-md:top-8">
+            <ModeSwitch></ModeSwitch>
+        </div>
+
+        <div class="fixed right-0 z-[60] max-md:top-8">
+        <SideBar>
+            <div id="menu-open" class="fixed right-0 top-0 z-[60] hidden">
+                <div class="bg-[#171717] w-50 h-screen p-6 shadow-[0_0_0_100vmax_rgba(0,0,0,0.5)] relative">
+                    <button id="close-button" class="absolute top-4 right-4">
+                        <Bars class="size-7 text-white" />
+                    </button>
+
+                    <ul class="flex flex-col space-y-5 mt-12 text-white">
+                        <a href="#top" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105 border-b-2 border-white">Inicio</a>
+                        <a href="#recorrido" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105 border-b-2 border-white">Sobre mí</a>
+                        <a href="#servicios" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105 border-b-2 border-white">Servicios</a>
+                        <a href="#proyectos" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105 border-b-2 border-white">Proyectos</a>
+                        <a href="https://api.whatsapp.com/send?phone=541135996947&text=%C2%A1Hola%20Elian!%0A%C2%BFPodemos%20conversar%3F" target="_blank" class="hover:text-[#51D8F3] duration-100 ease-linear hover:scale-105 border-b-2 border-white">Contacto</a>
+                    </ul>
+                </div>
+            </div>
+        </SideBar>
     </div>
     </div>
 
 
-    <Section id="top" class="pb-60 pt-60 max-w-[700px] justify-between flex w-full mx-auto max-md:flex-col max-md:p-6">
+    <Section id="top" class="pb-60 pt-60 max-w-[700px] justify-between flex w-full mx-auto max-md:flex-col max-md:p-6 max-md:pt-40">
         
         <img src="/Trupiano-foto.png" alt="" class="h-50 w-50 object-cover rounded-full mb-5">
 
         <div>
-            <span class="max-lg:flex-col font-bebas flex max-md:text-4xl text-7xl font-bold gap-x-10 gap-y-4 text-shadow-lg">SOY</span>
-            <h1 class="max-lg:flex-col font-bebas flex max-md:text-4xl text-7xl font-bold gap-x-10 gap-y-4 text-[#323232] text-shadow-lg">
+            <span class="max-lg:flex-col font-bebas flex max-md:text-5xl text-7xl font-bold gap-x-10 gap-y-4 text-shadow-lg">SOY</span>
+            <h1 class="max-lg:flex-col font-bebas flex max-md:text-5xl text-7xl font-bold gap-x-10 gap-y-4 text-[#323232] text-shadow-lg">
                 Elian Trupiano 
             </h1>
-            <h2 class="max-lg:flex-col font-bebas flex max-md:text-4xl text-7xl font-bold gap-x-10 gap-y-4 pb-4 text-shadow-lg">DISEÑADOR DIGITAL</h2>
+            <h2 class="max-lg:flex-col font-bebas flex max-md:text-5xl text-7xl font-bold gap-x-10 gap-y-4 pb-4 text-shadow-lg">DISEÑADOR DIGITAL</h2>
 
             <div class="flex space-x-3">
                 <div class="bg-[#323232] h-12 rounded-full flex items-center justify-center px-4 space-x-3">
@@ -132,7 +154,7 @@ import ModeSwitch from '../components/ModeSwitch.astro';
         </Section>
     </div>
 
-    <div class="bg-linear-to-br py-20 from-[#1d1d22] to-[#1e1b1b] h-auto p-10 flex flex-col justify-center place-items-center">
+    <div class="bg-linear-to-br py-20 from-[#1d1d22] to-[#1e1b1b] h-auto flex flex-col justify-center place-items-center">
         
         <h2 class="flex font-bebas items-center gap-x-2 text-7xl font-semibold justify-center text-center">
                 PROYECTOS
