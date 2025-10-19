@@ -3,15 +3,18 @@ import PS from "../icons/PS.astro"
 import AI from "../icons/AI.astro"
 import GitHub from "../icons/GitHub.astro"
 import Behance from "../icons/Behance.astro"
-import ARROW from "../icons/Arrow.astro"
-import ButtonInfo from "./ButtonInfo.astro"
+import Arrow from "../icons/Arrow.astro"
+import XD from '../icons/XD.astro'
+import AID from "../icons/Aid.astro"
+import Layers from "../icons/layers.astro"
+import FIGMA from "../icons/Figma.astro"
 
 
 const TAGS = {
     ARROW: {
         name: "Arrow",
         class: "bg-[#000] text-white flex gap-x-1 p-1.5 pl-2.5 pr-2.5 rounded-full text-xs items-center w-auto",
-        icon: ARROW,
+        icon: Arrow,
     },
     PHOTOSHOP: {
         name: "Photoshop",
@@ -22,6 +25,21 @@ const TAGS = {
         name: "Illustrator",
         class: "bg-[#5D1B0D] text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-xs items-center w-auto",
         icon: AI
+    },
+    XD: {
+        name: "Adobe XD",
+        class: "bg-[#C11C8A] text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-xs items-center w-auto",
+        icon: XD
+    },
+    AID: {
+        name: "Adobe InDesign",
+        class: "bg-[#C11C8A] text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-xs items-center w-auto",
+        icon: AID
+    },
+    FIGMA: {
+        name: "Figma",
+        class: "bg-[#181818] text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-xs items-center w-auto",
+        icon: FIGMA
     },
     GITHUB: {
         name: "GitHub",
@@ -37,98 +55,144 @@ const TAGS = {
 
 const PROYECTOS = [
     {
-        title: "Manual de marca",
+        title: "Diseño Web | FLOWING",
+        pagina: 1,
         categoria: "diseño",
-        description: "Proyecto desarrollado con Adobe Illustrator, enfocado en la creación de una identidad visual coherente y profesional. Incluye la construcción de la identidad visual de la marca y la guia del correcto uso de la misma.",
+        description: "Diseño de web gastronomica, catering de lujo.",
+        tags: [TAGS.PHOTOSHOP, TAGS.XD, TAGS.FIGMA],
+        image: "/proyectos/p05.webp",
+        type: "Behance",
+        URL : "https://www.behance.net/gallery/233030753/Diseno-Web-Flowing-Comida-de-Lujo",
+        Icon: TAGS.ARROW,
+    },
+    {
+        title: "Branding | Crianza Consciente",
+        pagina: 2,
+        categoria: "diseño",
+        description: "Identidad Visual para profesional de Marketing",
         tags: [TAGS.PHOTOSHOP, TAGS.ILLUSTRATOR],
         image: "/proyectos/p03.webp",
         type: "Behance",
         URL : "https://www.behance.net/gallery/228557407/Manual-de-identidad-Crianza-Consciente",
-        Icon: TAGS.BEHANCE
+        Icon: TAGS.ARROW,
+    },
+    {
+        title: "Branding | Gisela Farrel",
+        pagina: 1,
+        categoria: "diseño",
+        description: "Identidad Visual para mentora de Crianzas.",
+        tags: [TAGS.PHOTOSHOP, TAGS.ILLUSTRATOR],
+        image: "/proyectos/p06.webp",
+        type: "Behance",
+        URL : "https://www.behance.net/gallery/230439487/MARCA-PERSONAL-Gisela-Farrel",
+        Icon: TAGS.ARROW,
     },
     {
         title: "Logo tipográfico | Monograma ",
+        pagina: 2,
         categoria: "diseño",
-        description: "Proyecto desarrollado con Adobe Illustrator, creación de una composición tipográfica que sintetiza las iniciales de la marca, transmitiendo profesionalismo, estilo y personalidad a través de formas limpias y bien equilibradas.",
+        description: "Desarrollo de logo tipográfico.",
         tags: [TAGS.PHOTOSHOP, TAGS.ILLUSTRATOR],
         image: "/proyectos/p04.webp",
         type: "Behance",
         URL : "https://www.behance.net/gallery/229887605/Monograma-Marca-Mariana-Duque",
-        Icon: TAGS.BEHANCE
+        Icon: TAGS.ARROW,
+    },
+    {
+        title: "Catálogo | Monograma ",
+        pagina: 2,
+        categoria: "diseño",
+        description: "Catálogo desarrollado para Lion Fitness.",
+        tags: [TAGS.PHOTOSHOP, TAGS.ILLUSTRATOR, TAGS.AID],
+        image: "/proyectos/p07.webp",
+        type: "Behance",
+        URL : "https://www.behance.net/gallery/235829777/Catalogo-Interactivo-Gimnasio-PS-AI-ID",
+        Icon: TAGS.ARROW,
     },
 ]
 
 const proyectos = JSON.stringify(PROYECTOS);
 ---
 
-<!-- <div x-data="{ filtro: 'todos' }">
-  <div class="flex gap-3 mb-10 justify-center">
+<div x-data="{ pagina: 1 }" class="space-y-10">
+  <!-- Botones de navegación -->
+  <div class="flex justify-center gap-4 mb-6">
     <button
-      @click="filtro = 'todos'"
-      :class="filtro === 'todos' ? 'bg-[#51D8F3] text-black font-semibold' : 'bg-gray-800 text-white'"
+      @click="pagina = 1"
+      :class="pagina === 1 ? 'bg-[#f3f3f3] text-black font-semibold' : 'bg-[#303030] text-white'"
       class="px-4 py-2 rounded-lg transition-colors"
     >
-      Todos
+      Página 1
     </button>
     <button
-      @click="filtro = 'desarrollo'"
-      :class="filtro === 'desarrollo' ? 'bg-[#51D8F3] text-black font-semibold' : 'bg-gray-800 text-white'"
+      @click="pagina = 2"
+      :class="pagina === 2 ? 'bg-[#f3f3f3] text-black font-semibold' : 'bg-[#303030] text-white'"
       class="px-4 py-2 rounded-lg transition-colors"
     >
-      Desarrollo Web
+      Página 2
     </button>
-    <button
-      @click="filtro = 'diseño'"
-      :class="filtro === 'diseño' ? 'bg-[#51D8F3] text-black font-semibold' : 'bg-gray-800 text-white'"
-      class="px-4 py-2 rounded-lg transition-colors"
-    >
-      Diseño Gráfico
-    </button>
-  </div> -->
+  </div>
 
-<div class="grid grid-cols-1 space-y-10">
-    {PROYECTOS.map(({ title, description, tags, image ,URL, Icon, type, categoria }) => (
-        <div class="max-md:p-4 p-8 bg-linear-to-br from-[#535353] to-[#0a0b0c] shadow-2xl shadow-black rounded-2xl flex-col"> 
+  <!-- Proyectos -->
+  <div class="grid grid-cols-2 max-lg:grid-cols-1 mt-10 space-x-10 space-y-10">
+    {PROYECTOS.map(
+      ({
+        title,
+        description,
+        tags,
+        image,
+        URL,
+        Icon,
+        type,
+        categoria,
+        pagina,
+      }) => (
+        <div x-show={`pagina === ${pagina}`}>
+          <div class="border-1 border-white bg-linear-to-br from-[#02090e] to-[#535353] shadow-2xl shadow-black rounded-2xl flex-col"> 
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-              <img class="hover:scale-102 duration-200 rounded-lg shadow-xl shadow-black" src={image} alt={`Foto del proyecto ${title}`} />
-
-            <div>
-              <div class="flex flex-col justify-between">
-                  <div class="space-y-5">
-                    <h3 class="max-md:text-xl text-2xl font-medium pb-2">{title}</h3>
-                    <ul class="flex flex-wrap gap-4">
-                      {tags.map(({name, class: tagClass, icon: Icon})=>{
-                        return(
-                          <li class={tagClass}>
-                            {Icon && <Icon class="size-4" />}
-                            <span>{name}</span>
-                          </li>
-                            )
-                      })}
-                    </ul>
-
-                    <p class="text-base font-light">{description}</p>                    
+            <div class="grid grid-cols-1 gap-10 items-start">
+              
+              <div>
+                <div class="space-y-5 p-6">
+                  <div class="flex gap-x-2 mb-2">
+                    <Layers class="size-5"></Layers>
+                    <h3 class="max-md:text-sm text-sm font-medium text-[#757575]">Experiencia laboral</h3>
                   </div>
 
-               
-
-                <div class="pt-10">
-                  <li class="flex gap-3">
-                      <span class="bg-[#232323] border-1 border-amber-50 text-white flex gap-x-1 p-1.5 pl-2 pr-2 rounded-full text-sm items-center w-auto">
-                        <a href={URL} target="_blank" class="flex items-center gap-x-2 pr-1.5 pl-1.5">
-                          {Icon === TAGS.BEHANCE && <Behance class="size-5" />}
-                          {Icon === TAGS.GITHUB && <GitHub class="size-5" />}
-                          {type}
+                  <div class="flex justify-between mb-2 items-center">
+                    <h3 class="max-md:text-xl text-xl font-semibold mb-0">{title}</h3>
+                    <div class="flex gap-3">
+                      <span class="bg-[#232323] hover:bg-[#757575] transition duration-200 border w-8 h-8 border-amber-50 
+                      text-white flex rounded-full text-sm justify-center">
+                        <a href={URL} target="_blank" class="flex items-center">
+                          {Icon === TAGS.ARROW && <Arrow class="size-5 hover:text-[#000] transition duration-200"/>}
+                          
                         </a>
-                      </span> 
-                    </li>
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <p class="text-sm">{description}</p>
+
+                  <ul class="flex flex-wrap gap-4 mb-4">
+                    {tags.map(({ name, class: tagClass, icon: TagIcon }) => (
+                      <li class={tagClass}>
+                        {TagIcon && <TagIcon class="size-4" />}
+                        <span>{name}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div> 
-          </div>
+
+              <div class="pl-10 pr-0 pb-0">  
+                <img class="origin-bottom-right hover:scale-104 duration-200 rounded-xl rounded-tr-none" src={image} alt={`Foto del proyecto ${title}`} />
+              </div>  
+              
+              </div>
+            </div>
           </div>
         </div>
-    ))}
-</div>  
-
-
+      )
+    )}
+  </div>
+</div>

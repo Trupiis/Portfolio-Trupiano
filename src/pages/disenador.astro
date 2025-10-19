@@ -27,6 +27,13 @@ import Person from '../icons/Person.astro';
 import Phone from '../icons/Phone.astro';
 import ModeSwitch from '../components/ModeSwitch.astro';
 import Bars from '../icons/bars.astro';
+import PS from "../icons/PS.astro"
+import AI from "../icons/AI.astro"
+import Arrow from "../icons/Arrow.astro"
+import XD from '../icons/XD.astro'
+import Figma from '../icons/Figma.astro';
+import Pr from "../icons/Pr.astro"
+import Ae from "../icons/Ae.astro"
 
 ---
 <Layout>
@@ -69,7 +76,7 @@ import Bars from '../icons/bars.astro';
 
     <Section id="top" class="pb-60 pt-60 max-w-[700px] justify-between flex w-full mx-auto max-md:flex-col max-md:p-6 max-md:pt-40">
         
-        <img src="/Trupiano-foto.png" alt="" class="h-50 w-50 object-cover rounded-full mb-5">
+        <img src="/Trupiano-Disenio.png" alt="" class="h-50 w-50 object-cover rounded-full mb-5">
 
         <div>
             <span class="max-lg:flex-col font-bebas flex max-md:text-5xl text-7xl font-bold gap-x-10 gap-y-4 text-shadow-lg">SOY</span>
@@ -92,13 +99,13 @@ import Bars from '../icons/bars.astro';
 
     </Section>
 
-    <div class="bg-linear-to-br from-[#323232] to-[#010101] h-auto">
-        <Section id="recorrido" class="py-20 max-w-[1400px] max-md:max-w-[700px] mx-auto">
-            <h2 class="flex font-bebas items-center gap-x-2 text-7xl font-semibold mb-20 justify-center text-center">
+    <div class="bg-linear-to-br from-[#323232] to-[#010101] h-auto p-10">
+        <Section id="recorrido" class="py-20 max-w-[1000px] max-md:max-w-[700px] mx-auto">
+            <h2 class="flex font-bebas items-center gap-x-2 text-7xl font-semibold mb-20 justify-center text-center text-[#d5d5d5]">
                 RECORRIDO
             </h2>
 
-            <div class="flex flex-col gap-10 p-10">
+            <!-- <div class="flex flex-col gap-10 p-10">
                 <div class="w-full flex justify-start">
                     <CardRecorrido image="/Des/miniaturas1.png" alt="Proyecto 1"> 
                         <p>Comencé en 2021 a dar mis primeros pasos como autodidacta en Photoshop CS6.</p>
@@ -118,7 +125,44 @@ import Bars from '../icons/bars.astro';
                         <p>Estoy dedicado a crear identidades visuales de marca y diseño de páginas web.</p>
                     </CardRecorrido>
                 </div>
+            </div> -->
+
+            <p class="flex justify-center text-center text-lg font-semibold text-[#bababa]">Soy un diseñador gráfico especializado en desarrollar identidades de marca y con un fuerte enfoque en RRSS. Tengo una amplia experiencia en Diseño UX/UI gracias a integrar mis habilidades de desarrollador web, esto me permite diseñar web atractivas, funcionales, y posibles de desarrollar.</p>
+
+            
+            <h3 class="flex font-bebas items-center gap-x-2 text-3xl font-semibold mb-10 mt-10 justify-center text-center text-[#bababa]">
+                HERRAMIENTAS
+            </h3>
+
+            <div class="flex justify-center">
+                <ul class="space-y-2 grid grid-cols-2 gap-x-20">
+                    <li class="flex items-center justify-start gap-x-2">
+                        <PS class="size-8 shrink-0 inline-block align-middle !m-0"></PS>
+                        <span class="leading-none text-[#bababa] font-semibold !m-0">Adobe Photoshop</span>
+                    </li>
+                    <li class="flex items-center justify-start gap-x-2">
+                        <AI class="size-8 shrink-0 inline-block align-middle !m-0"></AI>
+                        <span class="leading-none text-[#bababa] font-semibold !m-0">Adobe Illustrator</span>
+                    </li>
+                    <li class="flex items-center justify-start gap-x-2">
+                        <XD class="size-8 shrink-0 inline-block align-middle !m-0"></XD>
+                        <span class="leading-none text-[#bababa] font-semibold !m-0">Adobe XD</span>
+                    </li>
+                    <li class="flex items-center justify-start gap-x-2">
+                        <Pr class="size-8 shrink-0 inline-block align-middle !m-0"></Pr>
+                        <span class="leading-none text-[#bababa] font-semibold !m-0">Adobe Premiere</span>
+                    </li>
+                    <li class="flex items-center justify-start gap-x-2">
+                        <Ae class="size-8 shrink-0 inline-block align-middle !m-0"></Ae>
+                        <span class="leading-none text-[#bababa] font-semibold !m-0">Adobe After Effects</span>
+                    </li>
+                    <li class="flex items-center justify-start gap-x-2">
+                        <Figma class="size-8 shrink-0 inline-block align-middle !m-0"></Figma>
+                        <span class="leading-none text-[#bababa] font-semibold !m-0">Figma</span>
+                    </li>
+                </ul>
             </div>
+
         </Section>
     </div>
 
