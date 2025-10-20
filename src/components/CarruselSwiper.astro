@@ -1,0 +1,121 @@
+---
+/* Sin frontmatter necesario */
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<style>
+  /* Contenedor: fila sin wrap, scroll horizontal */
+.carrusel{
+  display:flex; 
+  flex-wrap:nowrap; 
+  overflow-x:auto; 
+  overflow-y:hidden;
+  gap:50px; 
+  padding:0 20px; 
+  scroll-behavior:smooth; 
+  -webkit-overflow-scrolling:touch;
+  cursor: grab;
+}
+.carrusel::-webkit-scrollbar{ display:none; }
+.carrusel{ scrollbar-width:none; -ms-overflow-style:none; }
+
+/* heredar cursor a los hijos (el overlay de controles no lo hacía) */
+.carrusel * { cursor: inherit; }
+
+.carrusel.dragging{ cursor:grabbing; user-select:none; }
+.carrusel.dragging video{ pointer-events:none; } /* bloquea controles mientras arrastrás */
+
+/* Ítems */
+.elemento{
+  flex: 0 0 auto;                   /* no se encogen, ancho auto */
+}
+
+/* Evitar clicks sobre los videos mientras arrastrás */
+.carrusel.dragging video{
+  pointer-events: none;
+}
+
+/* (Opcional) snap por slide si querés “encastre” al soltar */
+.carrusel{
+  scroll-snap-type: x mandatory;    /* opcional */
+}
+.elemento{
+  scroll-snap-align: start;         /* opcional */
+}
+
+</style>
+
+<div id="carrusel" class="carrusel">
+  <div class="elemento rounded-2xl"><video src="/videos/video2.mp4" class="rounded-2xl h-[420px]" controls></video></div>
+  <div class="elemento rounded-2xl"><video src="/videos/video1.mp4" class="rounded-2xl h-[420px]" controls></video></div>
+  <div class="elemento rounded-2xl"><video src="/videos/video3.mp4" class="rounded-2xl h-[420px]" controls></video></div>
+  <div class="elemento rounded-2xl"><video src="/videos/video5.mp4" class="rounded-2xl h-[420px]" controls></video></div>
+  <div class="elemento rounded-2xl"><video src="/videos/video4.mp4" class="rounded-2xl h-[420px]" controls></video></div>
+</div>
+
+
+<script is:inline>
+  (function(){
+    const carrusel = document.getElementById('carrusel');
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    let moved = false;
+
+    // Mouse
+    carrusel.addEventListener('mousedown', (e) => {
+      isDown = true;
+      moved = false;
+      carrusel.classList.add('dragging');
+      startX = e.pageX - carrusel.offsetLeft;
+      scrollLeft = carrusel.scrollLeft;
+      e.preventDefault(); // evita selección
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDown = false;
+      carrusel.classList.remove('dragging');
+    });
+
+    carrusel.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      const x = e.pageX - carrusel.offsetLeft;
+      const walk = (x - startX);     // distancia arrastrada
+      if (Math.abs(walk) > 3) moved = true;
+      carrusel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Evitar click accidental en controles si venías arrastrando
+    carrusel.addEventListener('click', (e) => {
+      if (moved) e.preventDefault();
+    }, true);
+
+    // Touch
+    let touchStartX = 0;
+    let touchScrollLeft = 0;
+
+    carrusel.addEventListener('touchstart', (e) => {
+      carrusel.classList.add('dragging');
+      touchStartX = e.touches[0].pageX;
+      touchScrollLeft = carrusel.scrollLeft;
+    }, { passive: true });
+
+    carrusel.addEventListener('touchmove', (e) => {
+      const x = e.touches[0].pageX;
+      carrusel.scrollLeft = touchScrollLeft - (x - touchStartX);
+    }, { passive: true });
+
+    carrusel.addEventListener('touchend', () => {
+      carrusel.classList.remove('dragging');
+    });
+
+    // Rueda del mouse: convierte vertical en horizontal
+    carrusel.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        carrusel.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }
+    }, { passive: false });
+  })();
+</script>

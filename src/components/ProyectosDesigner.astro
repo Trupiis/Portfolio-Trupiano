@@ -8,6 +8,7 @@ import XD from '../icons/XD.astro'
 import AID from "../icons/Aid.astro"
 import Layers from "../icons/layers.astro"
 import FIGMA from "../icons/Figma.astro"
+import CarruselSwiper from "../components/CarruselSwiper.astro"
 
 
 const TAGS = {
@@ -69,7 +70,7 @@ const PROYECTOS = [
         title: "Branding | Crianza Consciente",
         pagina: 2,
         categoria: "diseño",
-        description: "Identidad Visual para profesional de Marketing",
+        description: "Identidad Visual para mentora de Crianzas.",
         tags: [TAGS.PHOTOSHOP, TAGS.ILLUSTRATOR],
         image: "/proyectos/p03.webp",
         type: "Behance",
@@ -80,7 +81,7 @@ const PROYECTOS = [
         title: "Branding | Gisela Farrel",
         pagina: 1,
         categoria: "diseño",
-        description: "Identidad Visual para mentora de Crianzas.",
+        description: "Identidad Visual para profesional de Marketing",
         tags: [TAGS.PHOTOSHOP, TAGS.ILLUSTRATOR],
         image: "/proyectos/p06.webp",
         type: "Behance",
@@ -134,7 +135,8 @@ const proyectos = JSON.stringify(PROYECTOS);
   </div>
 
   <!-- Proyectos -->
-  <div class="grid grid-cols-2 max-lg:grid-cols-1 mt-10 space-x-10 space-y-10">
+  <div class="grid grid-cols-2 max-lg:grid-cols-1 mt-10 gap-10 justify-items-center">
+
     {PROYECTOS.map(
       ({
         title,
@@ -151,7 +153,6 @@ const proyectos = JSON.stringify(PROYECTOS);
           <div class="border-1 border-white bg-linear-to-br from-[#02090e] to-[#535353] shadow-2xl shadow-black rounded-2xl flex-col"> 
 
             <div class="grid grid-cols-1 gap-10 items-start">
-              
               <div>
                 <div class="space-y-5 p-6">
                   <div class="flex gap-x-2 mb-2">
@@ -195,4 +196,10 @@ const proyectos = JSON.stringify(PROYECTOS);
       )
     )}
   </div>
+
+  <h3 class="flex font-bebas items-center gap-x-2 text-3xl font-semibold mb-10 mt-10 justify-center text-center text-[#bababa]">
+      EDICIÓN DE VIDEOS
+  </h3>
+
+  <CarruselSwiper></CarruselSwiper>
 </div>

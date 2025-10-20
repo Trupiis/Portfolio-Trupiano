@@ -4,19 +4,23 @@ import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro";
 import '@fontsource-variable/sora';
 import "@fontsource/bebas-neue"; 
+
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width " />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 		<meta name="generator" content={Astro.generator} />
 		<title>Portfolio Elian Trupiano</title>
 
+    
 		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 	</head>
@@ -29,16 +33,16 @@ import "@fontsource/bebas-neue";
     function mountFinisher(el, config) {
       if (!el) return;
       const marker = 'finisher-header';
-      el.classList.add(marker);        // marcar solo este target
-      new FinisherHeader(config);      // inicializar con su config
-      el.classList.remove(marker);     // limpiar para no afectar el siguiente init
+      el.classList.add(marker);  
+      new FinisherHeader(config);
+      el.classList.remove(marker);
     }
 
     // Seleccioná los contenedores (si no existen, no pasa nada)
     const devEl    = document.querySelector('.finisher-dev');
     const designEl = document.querySelector('.finisher-design');
 
-    // Config 1: DESARROLLADOR (oscuro) — tu config actual
+    // Config 1: DESARROLLADOR (oscuro)
     const devConfig = {
       count: 100,
       size: { min: 2, max: 8, pulse: 0 },
@@ -50,7 +54,7 @@ import "@fontsource/bebas-neue";
       shapes: ["s", "t"]
     };
 
-    // Config 2: DISEÑADOR (claro) — tu nueva config
+    // Config 2: DISEÑADOR (claro) 
     const designConfig = {
       count: 90,
       size: { min: 1, max: 20, pulse: 0 },
@@ -62,7 +66,6 @@ import "@fontsource/bebas-neue";
       shapes: ["c", "s", "t"]
     };
 
-    // Montar cada fondo (solo si existe en esta página)
     mountFinisher(devEl, devConfig);
     mountFinisher(designEl, designConfig);
 </script>
